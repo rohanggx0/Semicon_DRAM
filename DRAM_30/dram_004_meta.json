@@ -1,0 +1,43 @@
+{
+  "pair_id": 4,
+  "architecture": "DRAM",
+  "version": "v1.7_post_rotation_corrected",
+  "image_size_px": [
+    1000,
+    1000
+  ],
+  "scale_ratio": 10.05,
+  "rotation_deg": -0.1,
+  "reference": {
+    "filename": "reference/dram_004_ref.png",
+    "fov_relative": 1.0
+  },
+  "search": {
+    "filename": "search/dram_004_search.png",
+    "fov_relative": 10.05
+  },
+  "target_center": {
+    "x": 459.92937436310626,
+    "y": 539.9309978445352
+  },
+  "target_bbox": {
+    "xmin": 410.09137410046014,
+    "ymin": 490.09299758188905,
+    "xmax": 509.76737462575227,
+    "ymax": 589.7689981071812
+  },
+  "unrotated_target_center": {
+    "x": 460.0,
+    "y": 540.0
+  },
+  "sem_parameters": {
+    "edge_bloom": 0.3,
+    "blur_sigma": 0.5,
+    "shot_dose": 230.0,
+    "gaussian_std": 4.0,
+    "charging_strength": 0.0,
+    "contrast": 1.0,
+    "gamma": 1.0,
+    "seed": 5004
+  }
+}

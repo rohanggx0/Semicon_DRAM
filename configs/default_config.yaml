@@ -1,0 +1,42 @@
+# Drift-Sense System Configuration File
+# Integrated Applied Materials Hackathon Architecture
+
+dataset:
+  ref_size: [1000, 1000]       # Reference image dimensions (100x magnification, ~1 nm/px)
+  search_size: [1000, 1000]    # Search image dimensions (10x magnification, ~10 nm/px)
+  nominal_scale_ratio: 10.0    # 100x : 10x = 10:1 ratio (Ref target in Search image ~ 100x100 px)
+  dram_pitch_px: 40            # Pitch of DRAM unit cell array in 100x reference domain
+  contact_radius_px: 10        # Radius of DRAM contacts in 100x reference domain
+
+degradation:
+  shot_noise_lambda: 50.0      # Poisson shot noise scale factor (higher = lower noise)
+  gaussian_noise_std: 8.0      # Electronic readout noise standard deviation
+  beam_blur_sigma: 1.5         # Beam spot Gaussian PSF sigma
+  contrast_gamma: 1.1          # Nonlinear charging contrast variation
+  raster_jitter_max: 1.5       # Maximum scan line jitter displacement (px)
+
+search:
+  scale_min: 8.5               # Minimum scale search ratio
+  scale_max: 11.5              # Maximum scale search ratio
+  scale_step: 0.25             # Scale sampling resolution
+  rotation_min: -2.5           # Minimum rotation angle in degrees
+  rotation_max: 2.5            # Maximum rotation angle in degrees
+  rotation_step: 0.5           # Rotation sampling resolution (deg)
+  top_k_candidates: 15         # Number of candidate correlation peaks to evaluate
+
+scoring:
+  weight_zncc: 0.40            # Weight for primary ZNCC correlation score
+  weight_geo: 0.35             # Weight for rotated physical landmark verification
+  weight_edge: 0.25            # Weight for Sobel edge gradient map similarity
+  center_x: 500.0              # Search image center X coordinate
+  center_y: 500.0              # Search image center Y coordinate
+  confidence_margin: 0.985      # Ambiguity tie-breaker threshold (tight 1.5% score window)
+
+subpixel:
+  method: "quadratic"          # Options: "quadratic", "parabolic", "gaussian"
+  window_size: 3               # Neighborhood window for surface fitting
+
+ai:
+  enabled: false               # Toggle AI restoration pre-filter
+  model_path: "models/weights/denoiser.pth"
+  device: "cpu"

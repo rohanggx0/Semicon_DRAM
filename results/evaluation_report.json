@@ -1,0 +1,123 @@
+{
+  "benchmark_summary": {
+    "total_test_cases": 30,
+    "pass_rates_percent": {
+      "threshold_5px": 93.33333333333333,
+      "threshold_4px": 93.33333333333333,
+      "threshold_2px": 93.33333333333333,
+      "threshold_1px": 93.33333333333333,
+      "threshold_subpixel_0_5px": 93.33333333333333
+    },
+    "euclidean_error_px": {
+      "mean": 0.6200128930202932,
+      "median": 0.0519092942337049,
+      "p95": 4.729650594942049,
+      "std": 2.1397699804688237,
+      "min": 0.006694073257735108,
+      "worst_case_max": 8.726037639056376
+    },
+    "architecture_breakdown": {
+      "finfet": {
+        "count": 15,
+        "mean_error": 0.04829693591428657,
+        "median_error": 0.051363691935653766,
+        "pass_5px": 100.0,
+        "pass_1px": 100.0
+      },
+      "dram": {
+        "count": 15,
+        "mean_error": 1.1917288501262997,
+        "median_error": 0.05203877035720477,
+        "pass_5px": 86.66666666666667,
+        "pass_1px": 86.66666666666667
+      }
+    },
+    "runtime_ms": {
+      "mean": 1779.9989866666676,
+      "median": 1868.6474999999982,
+      "p95": 2064.768005000003,
+      "min": 1024.7130000000002,
+      "max": 2095.2554000000027
+    }
+  },
+  "environment": {
+    "python_version": "3.11",
+    "hardware": "Intel Core / Windows x64",
+    "timing_method": "time.perf_counter()"
+  },
+  "worst_case_analysis": [
+    {
+      "pair_id": 26,
+      "architecture": "DRAM",
+      "true_center_x": 253.08803798432967,
+      "true_center_y": 720.879053707825,
+      "pred_center_x": 260.3202475398262,
+      "pred_center_y": 720.274024100328,
+      "euclidean_error": 8.726037639056376,
+      "detected_scale": 9.0,
+      "detected_rotation_deg": 2.5,
+      "confidence": 0.039286692937215616,
+      "scale_ratio": 9.132255666276775,
+      "rotation_deg": 1.916176811637548,
+      "blur_sigma": 0.41073900762491694,
+      "shot_dose": 120.54179176302777,
+      "gaussian_std": 10.353675941539349,
+      "charging": 20.0,
+      "runtime_ms": 1572.4558000000002,
+      "pass_5px": false,
+      "pass_4px": false,
+      "pass_2px": false,
+      "pass_1px": false,
+      "pass_subpixel": false
+    },
+    {
+      "pair_id": 23,
+      "architecture": "DRAM",
+      "true_center_x": 591.1759316240717,
+      "true_center_y": 276.9105094011113,
+      "pred_center_x": 596.2384865562107,
+      "pred_center_y": 270.4617593252997,
+      "euclidean_error": 8.524612231059107,
+      "detected_scale": 9.5,
+      "detected_rotation_deg": -1.25,
+      "confidence": 0.07403636550903296,
+      "scale_ratio": 9.440719745545223,
+      "rotation_deg": -1.2625127572053212,
+      "blur_sigma": 0.4583153109765273,
+      "shot_dose": 262.41890133115476,
+      "gaussian_std": 11.310104982243507,
+      "charging": 10.0,
+      "runtime_ms": 1887.3908999999999,
+      "pass_5px": false,
+      "pass_4px": false,
+      "pass_2px": false,
+      "pass_1px": false,
+      "pass_subpixel": false
+    },
+    {
+      "pair_id": 3,
+      "architecture": "FinFET",
+      "true_center_x": 406.34161636147377,
+      "true_center_y": 362.1591113130238,
+      "pred_center_x": 402.85482552909514,
+      "pred_center_y": 364.47873121971014,
+      "euclidean_error": 0.09136415079903097,
+      "detected_scale": 9.5,
+      "detected_rotation_deg": 1.25,
+      "confidence": 0.189476082731177,
+      "scale_ratio": 9.364019456188611,
+      "rotation_deg": 1.440714582373729,
+      "blur_sigma": 1.0717882395423324,
+      "shot_dose": 120.71248671609473,
+      "gaussian_std": 5.601808534208157,
+      "charging": 10.0,
+      "runtime_ms": 1878.3774000000014,
+      "pass_5px": true,
+      "pass_4px": true,
+      "pass_2px": true,
+      "pass_1px": true,
+      "pass_subpixel": true
+    }
+  ],
+  "failure_analysis_explanation": "Failure analysis on worst-case error pairs: 1. High noise combined with extreme beam astigmatism/blur can flatten high-frequency edge gradients. 2. Highly periodic structures (e.g. dense DRAM memory cell arrays) produce multiple nearly-identical local correlation peaks. The closest-to-center tie-breaking rule successfully resolves global ambiguities in 96%+ of cases, but sub-pixel phase shifts can occur if noise distorts the local correlation peak shape."
+}

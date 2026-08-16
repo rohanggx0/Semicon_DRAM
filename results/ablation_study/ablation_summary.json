@@ -1,0 +1,2946 @@
+{
+  "A": {
+    "name": "Config A (NCC Only)",
+    "metrics": {
+      "total_test_cases": 30,
+      "pass_rates_percent": {
+        "threshold_5px": 73.33333333333333,
+        "threshold_4px": 66.66666666666666,
+        "threshold_2px": 30.0,
+        "threshold_1px": 16.666666666666664,
+        "threshold_subpixel_0_5px": 6.666666666666667
+      },
+      "euclidean_error_px": {
+        "mean": 3.5643351095236606,
+        "median": 2.8422655678495237,
+        "p95": 8.315516601870018,
+        "std": 2.6627634397669704,
+        "min": 0.03424747125359303,
+        "worst_case_max": 11.018988212225604
+      },
+      "architecture_breakdown": {
+        "finfet": {
+          "count": 15,
+          "mean_error": 2.5778051067262813,
+          "median_error": 2.1104329670679314,
+          "pass_5px": 86.66666666666667,
+          "pass_1px": 20.0
+        },
+        "dram": {
+          "count": 15,
+          "mean_error": 4.5508651123210395,
+          "median_error": 3.9683292675953954,
+          "pass_5px": 60.0,
+          "pass_1px": 13.333333333333334
+        }
+      },
+      "runtime_ms": {
+        "mean": 1682.960276666666,
+        "median": 1715.6266500000008,
+        "p95": 1954.2509900000016,
+        "min": 1264.5624,
+        "max": 1995.6540000000018
+      }
+    },
+    "raw_cases": [
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_001.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_001.png",
+        "predicted_center": {
+          "x": 721.341655682655,
+          "y": 428.3224151867194
+        },
+        "confidence": 0.1432192325592041,
+        "runtime_ms": 1316.1679,
+        "detected_scale": 10.5,
+        "detected_rotation_deg": 0.0,
+        "true_center": {
+          "x": 721.766252805277,
+          "y": 429.71051667078655
+        },
+        "euclidean_error": 1.4515882496797323,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_002.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_002.png",
+        "predicted_center": {
+          "x": 329.43597987396646,
+          "y": 540.5198646689222
+        },
+        "confidence": 0.3397758801778158,
+        "runtime_ms": 1264.5624,
+        "detected_scale": 10.5,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 329.99557250215184,
+          "y": 542.9717574201136
+        },
+        "euclidean_error": 2.5149397553150914,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_003.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_003.png",
+        "predicted_center": {
+          "x": 402.8669563510162,
+          "y": 364.47775177915713
+        },
+        "confidence": 0.20659883817036948,
+        "runtime_ms": 1618.0967999999996,
+        "detected_scale": 9.5,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 406.34161636147377,
+          "y": 362.1591113130238
+        },
+        "euclidean_error": 4.177242607206815,
+        "pass_5px": true,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_004.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_004.png",
+        "predicted_center": {
+          "x": 666.7157531644775,
+          "y": 600.4762936208028
+        },
+        "confidence": 0.2952226003011068,
+        "runtime_ms": 1490.9910000000002,
+        "detected_scale": 9.5,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 669.2824061847678,
+          "y": 596.0740743136735
+        },
+        "euclidean_error": 5.095806369420602,
+        "pass_5px": false,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_005.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_005.png",
+        "predicted_center": {
+          "x": 569.2345323934103,
+          "y": 745.7547835887603
+        },
+        "confidence": 0.1660295327504476,
+        "runtime_ms": 1617.8651000000004,
+        "detected_scale": 9.0,
+        "detected_rotation_deg": 0.0,
+        "true_center": {
+          "x": 569.0976668007722,
+          "y": 745.729887740629
+        },
+        "euclidean_error": 0.1391114434629513,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": true,
+        "pass_subpixel": true,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_006.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_006.png",
+        "predicted_center": {
+          "x": 741.7563327048358,
+          "y": 270.80438549502173
+        },
+        "confidence": 0.18896698951721191,
+        "runtime_ms": 1747.4847999999988,
+        "detected_scale": 9.0,
+        "detected_rotation_deg": 0.0,
+        "true_center": {
+          "x": 741.2039277316678,
+          "y": 270.2000764468286
+        },
+        "euclidean_error": 0.8187433542379777,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": true,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_007.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_007.png",
+        "predicted_center": {
+          "x": 574.068354249511,
+          "y": 487.62248048047024
+        },
+        "confidence": 0.26553591092427575,
+        "runtime_ms": 1571.7778000000014,
+        "detected_scale": 10.0,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 574.2679597001288,
+          "y": 488.8442846609321
+        },
+        "euclidean_error": 1.2380015312229544,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_008.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_008.png",
+        "predicted_center": {
+          "x": 677.287572768959,
+          "y": 568.0281672268635
+        },
+        "confidence": 0.07996360460917155,
+        "runtime_ms": 1687.2043999999987,
+        "detected_scale": 9.0,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 677.9969086642975,
+          "y": 566.137577634783
+        },
+        "euclidean_error": 2.0192786875760085,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_009.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_009.png",
+        "predicted_center": {
+          "x": 519.8900014375618,
+          "y": 670.8964703853037
+        },
+        "confidence": 0.049538215001424156,
+        "runtime_ms": 1577.591,
+        "detected_scale": 10.5,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 521.8711244588897,
+          "y": 670.7044227898739
+        },
+        "euclidean_error": 1.9904096825894344,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_010.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_010.png",
+        "predicted_center": {
+          "x": 715.2458321253496,
+          "y": 506.1846479501358
+        },
+        "confidence": 0.13265371322631836,
+        "runtime_ms": 1651.8241000000007,
+        "detected_scale": 10.5,
+        "detected_rotation_deg": 0.0,
+        "true_center": {
+          "x": 715.24640575515,
+          "y": 506.2188906170313
+        },
+        "euclidean_error": 0.03424747125359303,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": true,
+        "pass_subpixel": true,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_011.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_011.png",
+        "predicted_center": {
+          "x": 324.9939223648002,
+          "y": 336.61573516916275
+        },
+        "confidence": 0.1150822639465332,
+        "runtime_ms": 1715.831699999999,
+        "detected_scale": 10.0,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 326.83067797616644,
+          "y": 334.6516504794838
+        },
+        "euclidean_error": 2.689107629701088,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_012.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_012.png",
+        "predicted_center": {
+          "x": 302.5148318961519,
+          "y": 665.5305474606498
+        },
+        "confidence": 0.05161722501118978,
+        "runtime_ms": 1296.3768999999984,
+        "detected_scale": 10.5,
+        "detected_rotation_deg": -2.5,
+        "true_center": {
+          "x": 308.2295065038277,
+          "y": 672.0767864928688
+        },
+        "euclidean_error": 8.689692246481538,
+        "pass_5px": false,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_013.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_013.png",
+        "predicted_center": {
+          "x": 283.9174945792735,
+          "y": 327.0384557496937
+        },
+        "confidence": 0.02684434254964193,
+        "runtime_ms": 1528.5776999999996,
+        "detected_scale": 9.5,
+        "detected_rotation_deg": 0.0,
+        "true_center": {
+          "x": 285.2890531402792,
+          "y": 325.43447494487737
+        },
+        "euclidean_error": 2.1104329670679314,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_014.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_014.png",
+        "predicted_center": {
+          "x": 611.32150433082,
+          "y": 319.4217237672389
+        },
+        "confidence": 0.1981055736541748,
+        "runtime_ms": 1399.8306000000014,
+        "detected_scale": 10.0,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 613.9441372548426,
+          "y": 321.07955856411365
+        },
+        "euclidean_error": 3.102679433634184,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_015.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_015.png",
+        "predicted_center": {
+          "x": 602.3356526783502,
+          "y": 549.5356777544737
+        },
+        "confidence": 0.07470091183980307,
+        "runtime_ms": 1525.6207999999988,
+        "detected_scale": 10.0,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 601.1690120943902,
+          "y": 551.8545357326745
+        },
+        "euclidean_error": 2.59579517204431,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_016.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_016.png",
+        "predicted_center": {
+          "x": 342.1933747063625,
+          "y": 693.5255602071643
+        },
+        "confidence": 0.1551644007364909,
+        "runtime_ms": 1643.765000000002,
+        "detected_scale": 11.0,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 336.18488293568015,
+          "y": 688.4610573183254
+        },
+        "euclidean_error": 7.858190814011497,
+        "pass_5px": false,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_017.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_017.png",
+        "predicted_center": {
+          "x": 689.1264892663232,
+          "y": 330.7766536261275
+        },
+        "confidence": 0.09448409080505371,
+        "runtime_ms": 1935.8436999999994,
+        "detected_scale": 10.0,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 687.5058800369301,
+          "y": 328.94049285336666
+        },
+        "euclidean_error": 2.449053012456015,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_018.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_018.png",
+        "predicted_center": {
+          "x": 710.9386709948106,
+          "y": 723.0493587210049
+        },
+        "confidence": 0.19344806671142578,
+        "runtime_ms": 1715.4216000000026,
+        "detected_scale": 9.5,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 715.3448223125845,
+          "y": 718.7809584009661
+        },
+        "euclidean_error": 6.134607626183337,
+        "pass_5px": false,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_019.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_019.png",
+        "predicted_center": {
+          "x": 725.1846642842402,
+          "y": 621.7015278883093
+        },
+        "confidence": 0.3720402717590332,
+        "runtime_ms": 1810.0515,
+        "detected_scale": 10.5,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 728.1201996873049,
+          "y": 616.0561062388765
+        },
+        "euclidean_error": 6.363030229578595,
+        "pass_5px": false,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_020.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_020.png",
+        "predicted_center": {
+          "x": 674.5254270652526,
+          "y": 276.67168218389196
+        },
+        "confidence": 0.17211357752482098,
+        "runtime_ms": 1732.7461999999975,
+        "detected_scale": 9.5,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 676.8707796377921,
+          "y": 278.5349812180697
+        },
+        "euclidean_error": 2.9954235059979593,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_021.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_021.png",
+        "predicted_center": {
+          "x": 565.7584093555594,
+          "y": 398.59228282375824
+        },
+        "confidence": 0.04752079645792644,
+        "runtime_ms": 1874.4804999999972,
+        "detected_scale": 10.5,
+        "detected_rotation_deg": 0.0,
+        "true_center": {
+          "x": 566.407904409764,
+          "y": 398.9512369012822
+        },
+        "euclidean_error": 0.7420861507987803,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": true,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_022.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_022.png",
+        "predicted_center": {
+          "x": 665.9641331176356,
+          "y": 341.1143582493951
+        },
+        "confidence": 0.22324085235595703,
+        "runtime_ms": 1995.6540000000018,
+        "detected_scale": 10.0,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 662.6762884975603,
+          "y": 337.812000556626
+        },
+        "euclidean_error": 4.659988044700207,
+        "pass_5px": true,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_023.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_023.png",
+        "predicted_center": {
+          "x": 596.0554945461199,
+          "y": 278.87685113626867
+        },
+        "confidence": 0.032176176706949874,
+        "runtime_ms": 1770.6274000000021,
+        "detected_scale": 9.5,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 591.1759316240717,
+          "y": 276.9105094011113
+        },
+        "euclidean_error": 5.260858687481461,
+        "pass_5px": false,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_024.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_024.png",
+        "predicted_center": {
+          "x": 645.0771141857435,
+          "y": 640.4969774341088
+        },
+        "confidence": 0.19478837649027508,
+        "runtime_ms": 1864.225999999995,
+        "detected_scale": 11.0,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 642.6265570194589,
+          "y": 642.9296787631058
+        },
+        "euclidean_error": 3.4530082799398123,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_025.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_025.png",
+        "predicted_center": {
+          "x": 675.8750224121806,
+          "y": 500.74361834716933
+        },
+        "confidence": 0.380626916885376,
+        "runtime_ms": 1871.1178000000004,
+        "detected_scale": 10.0,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 675.8747418004365,
+          "y": 496.8249874776921
+        },
+        "euclidean_error": 3.9186308795244797,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_026.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_026.png",
+        "predicted_center": {
+          "x": 260.57087847114974,
+          "y": 728.9676382236704
+        },
+        "confidence": 0.053898493448893234,
+        "runtime_ms": 1721.8270999999986,
+        "detected_scale": 9.0,
+        "detected_rotation_deg": 2.5,
+        "true_center": {
+          "x": 253.08803798432967,
+          "y": 720.879053707825
+        },
+        "euclidean_error": 11.018988212225604,
+        "pass_5px": false,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_027.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_027.png",
+        "predicted_center": {
+          "x": 277.13663220737305,
+          "y": 361.1464693460638
+        },
+        "confidence": 0.19473870595296225,
+        "runtime_ms": 1875.1441,
+        "detected_scale": 9.5,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 281.23328386668663,
+          "y": 354.8163950449247
+        },
+        "euclidean_error": 7.5400527501933245,
+        "pass_5px": false,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_028.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_028.png",
+        "predicted_center": {
+          "x": 579.7216873898099,
+          "y": 486.61742424053506
+        },
+        "confidence": 0.235134760538737,
+        "runtime_ms": 1830.8619999999962,
+        "detected_scale": 10.0,
+        "detected_rotation_deg": 0.0,
+        "true_center": {
+          "x": 579.5896504667837,
+          "y": 486.0581257074268
+        },
+        "euclidean_error": 0.5746726008600296,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": true,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_029.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_029.png",
+        "predicted_center": {
+          "x": 438.55166582342935,
+          "y": 368.6074300136181
+        },
+        "confidence": 0.25798360506693524,
+        "runtime_ms": 1867.9269000000004,
+        "detected_scale": 11.0,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 442.1581859414915,
+          "y": 366.9519392060124
+        },
+        "euclidean_error": 3.9683292675953954,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_030.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_030.png",
+        "predicted_center": {
+          "x": 477.9559744442502,
+          "y": 288.85211969050096
+        },
+        "confidence": 0.10566949844360352,
+        "runtime_ms": 1969.3115000000034,
+        "detected_scale": 9.5,
+        "detected_rotation_deg": 0.0,
+        "true_center": {
+          "x": 476.64019811491846,
+          "y": 289.01691902085804
+        },
+        "euclidean_error": 1.3260566232691156,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      }
+    ]
+  },
+  "B": {
+    "name": "Config B (NCC + Gradient)",
+    "metrics": {
+      "total_test_cases": 30,
+      "pass_rates_percent": {
+        "threshold_5px": 76.66666666666667,
+        "threshold_4px": 66.66666666666666,
+        "threshold_2px": 30.0,
+        "threshold_1px": 16.666666666666664,
+        "threshold_subpixel_0_5px": 6.666666666666667
+      },
+      "euclidean_error_px": {
+        "mean": 3.5231726235589815,
+        "median": 2.8422655678495237,
+        "p95": 8.315516601870018,
+        "std": 2.6457095527475682,
+        "min": 0.03424747125359303,
+        "worst_case_max": 11.018988212225604
+      },
+      "architecture_breakdown": {
+        "finfet": {
+          "count": 15,
+          "mean_error": 2.5778051067262813,
+          "median_error": 2.1104329670679314,
+          "pass_5px": 86.66666666666667,
+          "pass_1px": 20.0
+        },
+        "dram": {
+          "count": 15,
+          "mean_error": 4.4685401403916805,
+          "median_error": 3.9683292675953954,
+          "pass_5px": 66.66666666666666,
+          "pass_1px": 13.333333333333334
+        }
+      },
+      "runtime_ms": {
+        "mean": 1771.1285700000005,
+        "median": 1798.2297500000045,
+        "p95": 1986.3294349999971,
+        "min": 1385.0212999999912,
+        "max": 2035.9459000000015
+      }
+    },
+    "raw_cases": [
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_001.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_001.png",
+        "predicted_center": {
+          "x": 721.341655682655,
+          "y": 428.3224151867194
+        },
+        "confidence": 0.14373993873596208,
+        "runtime_ms": 1900.4469000000058,
+        "detected_scale": 10.5,
+        "detected_rotation_deg": 0.0,
+        "true_center": {
+          "x": 721.766252805277,
+          "y": 429.71051667078655
+        },
+        "euclidean_error": 1.4515882496797323,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_002.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_002.png",
+        "predicted_center": {
+          "x": 329.43597987396646,
+          "y": 540.5198646689222
+        },
+        "confidence": 0.27940766016642193,
+        "runtime_ms": 1959.538000000002,
+        "detected_scale": 10.5,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 329.99557250215184,
+          "y": 542.9717574201136
+        },
+        "euclidean_error": 2.5149397553150914,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_003.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_003.png",
+        "predicted_center": {
+          "x": 402.8669563510162,
+          "y": 364.47775177915713
+        },
+        "confidence": 0.1451221307118737,
+        "runtime_ms": 1845.9882000000007,
+        "detected_scale": 9.5,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 406.34161636147377,
+          "y": 362.1591113130238
+        },
+        "euclidean_error": 4.177242607206815,
+        "pass_5px": true,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_004.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_004.png",
+        "predicted_center": {
+          "x": 666.7157531644775,
+          "y": 600.4762936208028
+        },
+        "confidence": 0.23347552617390893,
+        "runtime_ms": 1791.0196999999996,
+        "detected_scale": 9.5,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 669.2824061847678,
+          "y": 596.0740743136735
+        },
+        "euclidean_error": 5.095806369420602,
+        "pass_5px": false,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_005.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_005.png",
+        "predicted_center": {
+          "x": 569.2345323934103,
+          "y": 745.7547835887603
+        },
+        "confidence": 0.12113499641418501,
+        "runtime_ms": 1844.1095000000018,
+        "detected_scale": 9.0,
+        "detected_rotation_deg": 0.0,
+        "true_center": {
+          "x": 569.0976668007722,
+          "y": 745.729887740629
+        },
+        "euclidean_error": 0.1391114434629513,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": true,
+        "pass_subpixel": true,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_006.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_006.png",
+        "predicted_center": {
+          "x": 741.7563327048358,
+          "y": 270.80438549502173
+        },
+        "confidence": 0.13375941912333156,
+        "runtime_ms": 1945.2587000000037,
+        "detected_scale": 9.0,
+        "detected_rotation_deg": 0.0,
+        "true_center": {
+          "x": 741.2039277316678,
+          "y": 270.2000764468286
+        },
+        "euclidean_error": 0.8187433542379777,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": true,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_007.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_007.png",
+        "predicted_center": {
+          "x": 574.068354249511,
+          "y": 487.62248048047024
+        },
+        "confidence": 0.20604014396667408,
+        "runtime_ms": 1816.6122999999957,
+        "detected_scale": 10.0,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 574.2679597001288,
+          "y": 488.8442846609321
+        },
+        "euclidean_error": 1.2380015312229544,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_008.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_008.png",
+        "predicted_center": {
+          "x": 677.287572768959,
+          "y": 568.0281672268635
+        },
+        "confidence": 0.06556344032287553,
+        "runtime_ms": 1845.0220999999942,
+        "detected_scale": 9.0,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 677.9969086642975,
+          "y": 566.137577634783
+        },
+        "euclidean_error": 2.0192786875760085,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_009.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_009.png",
+        "predicted_center": {
+          "x": 519.8900014375618,
+          "y": 670.8964703853037
+        },
+        "confidence": 0.0318672657012938,
+        "runtime_ms": 1799.0594999999985,
+        "detected_scale": 10.5,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 521.8711244588897,
+          "y": 670.7044227898739
+        },
+        "euclidean_error": 1.9904096825894344,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_010.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_010.png",
+        "predicted_center": {
+          "x": 715.2458321253496,
+          "y": 506.1846479501358
+        },
+        "confidence": 0.0774291356404618,
+        "runtime_ms": 1808.4744000000087,
+        "detected_scale": 10.5,
+        "detected_rotation_deg": 0.0,
+        "true_center": {
+          "x": 715.24640575515,
+          "y": 506.2188906170313
+        },
+        "euclidean_error": 0.03424747125359303,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": true,
+        "pass_subpixel": true,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_011.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_011.png",
+        "predicted_center": {
+          "x": 324.9939223648002,
+          "y": 336.61573516916275
+        },
+        "confidence": 0.08934354782104434,
+        "runtime_ms": 1744.9807999999935,
+        "detected_scale": 10.0,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 326.83067797616644,
+          "y": 334.6516504794838
+        },
+        "euclidean_error": 2.689107629701088,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_012.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_012.png",
+        "predicted_center": {
+          "x": 302.5148318961519,
+          "y": 665.5305474606498
+        },
+        "confidence": 0.04507597287495946,
+        "runtime_ms": 1715.2494999999988,
+        "detected_scale": 10.5,
+        "detected_rotation_deg": -2.5,
+        "true_center": {
+          "x": 308.2295065038277,
+          "y": 672.0767864928688
+        },
+        "euclidean_error": 8.689692246481538,
+        "pass_5px": false,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_013.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_013.png",
+        "predicted_center": {
+          "x": 283.9174945792735,
+          "y": 327.0384557496937
+        },
+        "confidence": 0.0194549560546875,
+        "runtime_ms": 1789.5500999999995,
+        "detected_scale": 9.5,
+        "detected_rotation_deg": 0.0,
+        "true_center": {
+          "x": 285.2890531402792,
+          "y": 325.43447494487737
+        },
+        "euclidean_error": 2.1104329670679314,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_014.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_014.png",
+        "predicted_center": {
+          "x": 611.32150433082,
+          "y": 319.4217237672389
+        },
+        "confidence": 0.14412268002828021,
+        "runtime_ms": 1411.6723000000065,
+        "detected_scale": 10.0,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 613.9441372548426,
+          "y": 321.07955856411365
+        },
+        "euclidean_error": 3.102679433634184,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_015.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_015.png",
+        "predicted_center": {
+          "x": 602.3356526783502,
+          "y": 549.5356777544737
+        },
+        "confidence": 0.0381564299265554,
+        "runtime_ms": 1385.0212999999912,
+        "detected_scale": 10.0,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 601.1690120943902,
+          "y": 551.8545357326745
+        },
+        "euclidean_error": 2.59579517204431,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_016.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_016.png",
+        "predicted_center": {
+          "x": 342.1933747063625,
+          "y": 693.5255602071643
+        },
+        "confidence": 0.14363098144531222,
+        "runtime_ms": 1390.1932999999929,
+        "detected_scale": 11.0,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 336.18488293568015,
+          "y": 688.4610573183254
+        },
+        "euclidean_error": 7.858190814011497,
+        "pass_5px": false,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_017.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_017.png",
+        "predicted_center": {
+          "x": 689.1264892663232,
+          "y": 330.7766536261275
+        },
+        "confidence": 0.10038908322652196,
+        "runtime_ms": 1514.9633999999992,
+        "detected_scale": 10.0,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 687.5058800369301,
+          "y": 328.94049285336666
+        },
+        "euclidean_error": 2.449053012456015,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_018.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_018.png",
+        "predicted_center": {
+          "x": 710.9386709948106,
+          "y": 723.0493587210049
+        },
+        "confidence": 0.014528671900431908,
+        "runtime_ms": 1439.480500000002,
+        "detected_scale": 9.5,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 715.3448223125845,
+          "y": 718.7809584009661
+        },
+        "euclidean_error": 6.134607626183337,
+        "pass_5px": false,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_019.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_019.png",
+        "predicted_center": {
+          "x": 725.1846642842402,
+          "y": 621.7015278883093
+        },
+        "confidence": 0.18829123179117854,
+        "runtime_ms": 1774.189700000008,
+        "detected_scale": 10.5,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 728.1201996873049,
+          "y": 616.0561062388765
+        },
+        "euclidean_error": 6.363030229578595,
+        "pass_5px": false,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_020.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_020.png",
+        "predicted_center": {
+          "x": 674.5254270652526,
+          "y": 276.67168218389196
+        },
+        "confidence": 0.1446754137674966,
+        "runtime_ms": 1784.1518000000037,
+        "detected_scale": 9.5,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 676.8707796377921,
+          "y": 278.5349812180697
+        },
+        "euclidean_error": 2.9954235059979593,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_021.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_021.png",
+        "predicted_center": {
+          "x": 565.7584093555594,
+          "y": 398.59228282375824
+        },
+        "confidence": 0.09935363133748432,
+        "runtime_ms": 2008.2496999999933,
+        "detected_scale": 10.5,
+        "detected_rotation_deg": 0.0,
+        "true_center": {
+          "x": 566.407904409764,
+          "y": 398.9512369012822
+        },
+        "euclidean_error": 0.7420861507987803,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": true,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_022.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_022.png",
+        "predicted_center": {
+          "x": 665.9641331176356,
+          "y": 341.1143582493951
+        },
+        "confidence": 0.315235773722331,
+        "runtime_ms": 2035.9459000000015,
+        "detected_scale": 10.0,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 662.6762884975603,
+          "y": 337.812000556626
+        },
+        "euclidean_error": 4.659988044700207,
+        "pass_5px": true,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_023.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_023.png",
+        "predicted_center": {
+          "x": 587.5729971626455,
+          "y": 278.70700913918324
+        },
+        "confidence": 0.03610030810038338,
+        "runtime_ms": 1844.5662999999968,
+        "detected_scale": 9.5,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 591.1759316240717,
+          "y": 276.9105094011113
+        },
+        "euclidean_error": 4.02598410854107,
+        "pass_5px": true,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_024.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_024.png",
+        "predicted_center": {
+          "x": 645.0771141857435,
+          "y": 640.4969774341088
+        },
+        "confidence": 0.07377950350443493,
+        "runtime_ms": 1853.444600000003,
+        "detected_scale": 11.0,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 642.6265570194589,
+          "y": 642.9296787631058
+        },
+        "euclidean_error": 3.4530082799398123,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_025.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_025.png",
+        "predicted_center": {
+          "x": 675.8750224121806,
+          "y": 500.74361834716933
+        },
+        "confidence": 0.25070691108703524,
+        "runtime_ms": 1918.8844000000104,
+        "detected_scale": 10.0,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 675.8747418004365,
+          "y": 496.8249874776921
+        },
+        "euclidean_error": 3.9186308795244797,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_026.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_026.png",
+        "predicted_center": {
+          "x": 260.57087847114974,
+          "y": 728.9676382236704
+        },
+        "confidence": 0.07439676920572977,
+        "runtime_ms": 1722.9145999999957,
+        "detected_scale": 9.0,
+        "detected_rotation_deg": 2.5,
+        "true_center": {
+          "x": 253.08803798432967,
+          "y": 720.879053707825
+        },
+        "euclidean_error": 11.018988212225604,
+        "pass_5px": false,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_027.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_027.png",
+        "predicted_center": {
+          "x": 277.13663220737305,
+          "y": 361.1464693460638
+        },
+        "confidence": 0.06152105331420928,
+        "runtime_ms": 1797.4000000000103,
+        "detected_scale": 9.5,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 281.23328386668663,
+          "y": 354.8163950449247
+        },
+        "euclidean_error": 7.5400527501933245,
+        "pass_5px": false,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_028.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_028.png",
+        "predicted_center": {
+          "x": 579.7216873898099,
+          "y": 486.61742424053506
+        },
+        "confidence": 0.042344729105631515,
+        "runtime_ms": 1778.4567000000065,
+        "detected_scale": 10.0,
+        "detected_rotation_deg": 0.0,
+        "true_center": {
+          "x": 579.5896504667837,
+          "y": 486.0581257074268
+        },
+        "euclidean_error": 0.5746726008600296,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": true,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_029.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_029.png",
+        "predicted_center": {
+          "x": 438.55166582342935,
+          "y": 368.6074300136181
+        },
+        "confidence": 0.28209408124287927,
+        "runtime_ms": 1890.4106999999897,
+        "detected_scale": 11.0,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 442.1581859414915,
+          "y": 366.9519392060124
+        },
+        "euclidean_error": 3.9683292675953954,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_030.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_030.png",
+        "predicted_center": {
+          "x": 477.9559744442502,
+          "y": 288.85211969050096
+        },
+        "confidence": 0.026535908381143763,
+        "runtime_ms": 1778.6021999999946,
+        "detected_scale": 9.5,
+        "detected_rotation_deg": 0.0,
+        "true_center": {
+          "x": 476.64019811491846,
+          "y": 289.01691902085804
+        },
+        "euclidean_error": 1.3260566232691156,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      }
+    ]
+  },
+  "C": {
+    "name": "Config C (V1.5 Texture Landmark)",
+    "metrics": {
+      "total_test_cases": 30,
+      "pass_rates_percent": {
+        "threshold_5px": 76.66666666666667,
+        "threshold_4px": 66.66666666666666,
+        "threshold_2px": 30.0,
+        "threshold_1px": 16.666666666666664,
+        "threshold_subpixel_0_5px": 6.666666666666667
+      },
+      "euclidean_error_px": {
+        "mean": 3.5231726235589815,
+        "median": 2.8422655678495237,
+        "p95": 8.315516601870018,
+        "std": 2.6457095527475682,
+        "min": 0.03424747125359303,
+        "worst_case_max": 11.018988212225604
+      },
+      "architecture_breakdown": {
+        "finfet": {
+          "count": 15,
+          "mean_error": 2.5778051067262813,
+          "median_error": 2.1104329670679314,
+          "pass_5px": 86.66666666666667,
+          "pass_1px": 20.0
+        },
+        "dram": {
+          "count": 15,
+          "mean_error": 4.4685401403916805,
+          "median_error": 3.9683292675953954,
+          "pass_5px": 66.66666666666666,
+          "pass_1px": 13.333333333333334
+        }
+      },
+      "runtime_ms": {
+        "mean": 1837.2748433333334,
+        "median": 1839.420600000004,
+        "p95": 2035.3795500000067,
+        "min": 1268.735300000003,
+        "max": 2069.666000000012
+      }
+    },
+    "raw_cases": [
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_001.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_001.png",
+        "predicted_center": {
+          "x": 721.341655682655,
+          "y": 428.3224151867194
+        },
+        "confidence": 0.09341794252395601,
+        "runtime_ms": 1728.0377000000017,
+        "detected_scale": 10.5,
+        "detected_rotation_deg": 0.0,
+        "true_center": {
+          "x": 721.766252805277,
+          "y": 429.71051667078655
+        },
+        "euclidean_error": 1.4515882496797323,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_002.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_002.png",
+        "predicted_center": {
+          "x": 329.43597987396646,
+          "y": 540.5198646689222
+        },
+        "confidence": 0.18312418460845933,
+        "runtime_ms": 1929.8123999999889,
+        "detected_scale": 10.5,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 329.99557250215184,
+          "y": 542.9717574201136
+        },
+        "euclidean_error": 2.5149397553150914,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_003.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_003.png",
+        "predicted_center": {
+          "x": 402.8669563510162,
+          "y": 364.47775177915713
+        },
+        "confidence": 0.10315537767103293,
+        "runtime_ms": 1872.1457999999984,
+        "detected_scale": 9.5,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 406.34161636147377,
+          "y": 362.1591113130238
+        },
+        "euclidean_error": 4.177242607206815,
+        "pass_5px": true,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_004.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_004.png",
+        "predicted_center": {
+          "x": 666.7157531644775,
+          "y": 600.4762936208028
+        },
+        "confidence": 0.1533027688662214,
+        "runtime_ms": 1762.850599999993,
+        "detected_scale": 9.5,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 669.2824061847678,
+          "y": 596.0740743136735
+        },
+        "euclidean_error": 5.095806369420602,
+        "pass_5px": false,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_005.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_005.png",
+        "predicted_center": {
+          "x": 569.2345323934103,
+          "y": 745.7547835887603
+        },
+        "confidence": 0.07986011107762685,
+        "runtime_ms": 1817.0037000000007,
+        "detected_scale": 9.0,
+        "detected_rotation_deg": 0.0,
+        "true_center": {
+          "x": 569.0976668007722,
+          "y": 745.729887740629
+        },
+        "euclidean_error": 0.1391114434629513,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": true,
+        "pass_subpixel": true,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_006.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_006.png",
+        "predicted_center": {
+          "x": 741.7563327048358,
+          "y": 270.80438549502173
+        },
+        "confidence": 0.08836099612831753,
+        "runtime_ms": 2045.5175999999965,
+        "detected_scale": 9.0,
+        "detected_rotation_deg": 0.0,
+        "true_center": {
+          "x": 741.2039277316678,
+          "y": 270.2000764468286
+        },
+        "euclidean_error": 0.8187433542379777,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": true,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_007.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_007.png",
+        "predicted_center": {
+          "x": 574.068354249511,
+          "y": 487.62248048047024
+        },
+        "confidence": 0.13336610464578458,
+        "runtime_ms": 1741.8887999999981,
+        "detected_scale": 10.0,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 574.2679597001288,
+          "y": 488.8442846609321
+        },
+        "euclidean_error": 1.2380015312229544,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_008.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_008.png",
+        "predicted_center": {
+          "x": 677.287572768959,
+          "y": 568.0281672268635
+        },
+        "confidence": 0.04297624031702678,
+        "runtime_ms": 1886.2524000000035,
+        "detected_scale": 9.0,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 677.9969086642975,
+          "y": 566.137577634783
+        },
+        "euclidean_error": 2.0192786875760085,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_009.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_009.png",
+        "predicted_center": {
+          "x": 519.8900014375618,
+          "y": 670.8964703853037
+        },
+        "confidence": 0.019548796951426677,
+        "runtime_ms": 1860.3154999999988,
+        "detected_scale": 10.5,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 521.8711244588897,
+          "y": 670.7044227898739
+        },
+        "euclidean_error": 1.9904096825894344,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_010.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_010.png",
+        "predicted_center": {
+          "x": 715.2458321253496,
+          "y": 506.1846479501358
+        },
+        "confidence": 0.05170955260594745,
+        "runtime_ms": 1951.079000000007,
+        "detected_scale": 10.5,
+        "detected_rotation_deg": 0.0,
+        "true_center": {
+          "x": 715.24640575515,
+          "y": 506.2188906170313
+        },
+        "euclidean_error": 0.03424747125359303,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": true,
+        "pass_subpixel": true,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_011.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_011.png",
+        "predicted_center": {
+          "x": 324.9939223648002,
+          "y": 336.61573516916275
+        },
+        "confidence": 0.058716773986817,
+        "runtime_ms": 1843.2973999999972,
+        "detected_scale": 10.0,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 326.83067797616644,
+          "y": 334.6516504794838
+        },
+        "euclidean_error": 2.689107629701088,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_012.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_012.png",
+        "predicted_center": {
+          "x": 302.5148318961519,
+          "y": 665.5305474606498
+        },
+        "confidence": 0.029462913672129165,
+        "runtime_ms": 1748.6638999999968,
+        "detected_scale": 10.5,
+        "detected_rotation_deg": -2.5,
+        "true_center": {
+          "x": 308.2295065038277,
+          "y": 672.0767864928688
+        },
+        "euclidean_error": 8.689692246481538,
+        "pass_5px": false,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_013.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_013.png",
+        "predicted_center": {
+          "x": 283.9174945792735,
+          "y": 327.0384557496937
+        },
+        "confidence": 0.01469588279724136,
+        "runtime_ms": 1825.1188000000127,
+        "detected_scale": 9.5,
+        "detected_rotation_deg": 0.0,
+        "true_center": {
+          "x": 285.2890531402792,
+          "y": 325.43447494487737
+        },
+        "euclidean_error": 2.1104329670679314,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_014.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_014.png",
+        "predicted_center": {
+          "x": 611.32150433082,
+          "y": 319.4217237672389
+        },
+        "confidence": 0.09407750017582577,
+        "runtime_ms": 1779.0519999999788,
+        "detected_scale": 10.0,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 613.9441372548426,
+          "y": 321.07955856411365
+        },
+        "euclidean_error": 3.102679433634184,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_015.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_015.png",
+        "predicted_center": {
+          "x": 602.3356526783502,
+          "y": 549.5356777544737
+        },
+        "confidence": 0.025715291500090963,
+        "runtime_ms": 1736.4868999999885,
+        "detected_scale": 10.0,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 601.1690120943902,
+          "y": 551.8545357326745
+        },
+        "euclidean_error": 2.59579517204431,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_016.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_016.png",
+        "predicted_center": {
+          "x": 342.1933747063625,
+          "y": 693.5255602071643
+        },
+        "confidence": 0.09364847342173244,
+        "runtime_ms": 1824.6837000000085,
+        "detected_scale": 11.0,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 336.18488293568015,
+          "y": 688.4610573183254
+        },
+        "euclidean_error": 7.858190814011497,
+        "pass_5px": false,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_017.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_017.png",
+        "predicted_center": {
+          "x": 689.1264892663232,
+          "y": 330.7766536261275
+        },
+        "confidence": 0.06510527928670277,
+        "runtime_ms": 1992.3861999999986,
+        "detected_scale": 10.0,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 687.5058800369301,
+          "y": 328.94049285336666
+        },
+        "euclidean_error": 2.449053012456015,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_018.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_018.png",
+        "predicted_center": {
+          "x": 710.9386709948106,
+          "y": 723.0493587210049
+        },
+        "confidence": 0.041492462158202834,
+        "runtime_ms": 1778.442599999977,
+        "detected_scale": 9.5,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 715.3448223125845,
+          "y": 718.7809584009661
+        },
+        "euclidean_error": 6.134607626183337,
+        "pass_5px": false,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_019.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_019.png",
+        "predicted_center": {
+          "x": 725.1846642842402,
+          "y": 621.7015278883093
+        },
+        "confidence": 0.1561595516610259,
+        "runtime_ms": 2022.9886000000192,
+        "detected_scale": 10.5,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 728.1201996873049,
+          "y": 616.0561062388765
+        },
+        "euclidean_error": 6.363030229578595,
+        "pass_5px": false,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_020.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_020.png",
+        "predicted_center": {
+          "x": 674.5254270652526,
+          "y": 276.67168218389196
+        },
+        "confidence": 0.0947249730428057,
+        "runtime_ms": 1866.6596999999854,
+        "detected_scale": 9.5,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 676.8707796377921,
+          "y": 278.5349812180697
+        },
+        "euclidean_error": 2.9954235059979593,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_021.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_021.png",
+        "predicted_center": {
+          "x": 565.7584093555594,
+          "y": 398.59228282375824
+        },
+        "confidence": 0.06328403949737549,
+        "runtime_ms": 1970.4534999999908,
+        "detected_scale": 10.5,
+        "detected_rotation_deg": 0.0,
+        "true_center": {
+          "x": 566.407904409764,
+          "y": 398.9512369012822
+        },
+        "euclidean_error": 0.7420861507987803,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": true,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_022.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_022.png",
+        "predicted_center": {
+          "x": 665.9641331176356,
+          "y": 341.1143582493951
+        },
+        "confidence": 0.21938218436887924,
+        "runtime_ms": 2069.666000000012,
+        "detected_scale": 10.0,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 662.6762884975603,
+          "y": 337.812000556626
+        },
+        "euclidean_error": 4.659988044700207,
+        "pass_5px": true,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_023.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_023.png",
+        "predicted_center": {
+          "x": 587.5729971626455,
+          "y": 278.70700913918324
+        },
+        "confidence": 0.02509383360544811,
+        "runtime_ms": 1861.2481000000116,
+        "detected_scale": 9.5,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 591.1759316240717,
+          "y": 276.9105094011113
+        },
+        "euclidean_error": 4.02598410854107,
+        "pass_5px": true,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_024.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_024.png",
+        "predicted_center": {
+          "x": 645.0771141857435,
+          "y": 640.4969774341088
+        },
+        "confidence": 0.27232448650800434,
+        "runtime_ms": 1835.5438000000106,
+        "detected_scale": 11.0,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 642.6265570194589,
+          "y": 642.9296787631058
+        },
+        "euclidean_error": 3.4530082799398123,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_025.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_025.png",
+        "predicted_center": {
+          "x": 675.8750224121806,
+          "y": 500.74361834716933
+        },
+        "confidence": 0.16620749235153184,
+        "runtime_ms": 1873.4842000000071,
+        "detected_scale": 10.0,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 675.8747418004365,
+          "y": 496.8249874776921
+        },
+        "euclidean_error": 3.9186308795244797,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_026.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_026.png",
+        "predicted_center": {
+          "x": 260.57087847114974,
+          "y": 728.9676382236704
+        },
+        "confidence": 0.04784544308980306,
+        "runtime_ms": 1736.7371999999932,
+        "detected_scale": 9.0,
+        "detected_rotation_deg": 2.5,
+        "true_center": {
+          "x": 253.08803798432967,
+          "y": 720.879053707825
+        },
+        "euclidean_error": 11.018988212225604,
+        "pass_5px": false,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_027.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_027.png",
+        "predicted_center": {
+          "x": 277.13663220737305,
+          "y": 361.1464693460638
+        },
+        "confidence": 0.04331912597020482,
+        "runtime_ms": 1880.3319000000158,
+        "detected_scale": 9.5,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 281.23328386668663,
+          "y": 354.8163950449247
+        },
+        "euclidean_error": 7.5400527501933245,
+        "pass_5px": false,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_028.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_028.png",
+        "predicted_center": {
+          "x": 579.7216873898099,
+          "y": 486.61742424053506
+        },
+        "confidence": 0.032343824704488267,
+        "runtime_ms": 1828.397200000012,
+        "detected_scale": 10.0,
+        "detected_rotation_deg": 0.0,
+        "true_center": {
+          "x": 579.5896504667837,
+          "y": 486.0581257074268
+        },
+        "euclidean_error": 0.5746726008600296,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": true,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_029.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_029.png",
+        "predicted_center": {
+          "x": 438.55166582342935,
+          "y": 368.6074300136181
+        },
+        "confidence": 0.1827583909034732,
+        "runtime_ms": 1780.9647999999925,
+        "detected_scale": 11.0,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 442.1581859414915,
+          "y": 366.9519392060124
+        },
+        "euclidean_error": 3.9683292675953954,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_030.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_030.png",
+        "predicted_center": {
+          "x": 477.9559744442502,
+          "y": 288.85211969050096
+        },
+        "confidence": 0.10021742184956883,
+        "runtime_ms": 1268.735300000003,
+        "detected_scale": 9.5,
+        "detected_rotation_deg": 0.0,
+        "true_center": {
+          "x": 476.64019811491846,
+          "y": 289.01691902085804
+        },
+        "euclidean_error": 1.3260566232691156,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      }
+    ]
+  },
+  "D": {
+    "name": "Config D (V1.6 True Geometric Landmark)",
+    "metrics": {
+      "total_test_cases": 30,
+      "pass_rates_percent": {
+        "threshold_5px": 73.33333333333333,
+        "threshold_4px": 66.66666666666666,
+        "threshold_2px": 30.0,
+        "threshold_1px": 16.666666666666664,
+        "threshold_subpixel_0_5px": 6.666666666666667
+      },
+      "euclidean_error_px": {
+        "mean": 3.5368100126554225,
+        "median": 2.8422655678495237,
+        "p95": 8.047014267094005,
+        "std": 2.5107656844086543,
+        "min": 0.03424747125359303,
+        "worst_case_max": 8.674801655414546
+      },
+      "architecture_breakdown": {
+        "finfet": {
+          "count": 15,
+          "mean_error": 2.5779746185231387,
+          "median_error": 2.1104329670679314,
+          "pass_5px": 86.66666666666667,
+          "pass_1px": 20.0
+        },
+        "dram": {
+          "count": 15,
+          "mean_error": 4.495645406787706,
+          "median_error": 3.9683292675953954,
+          "pass_5px": 60.0,
+          "pass_1px": 13.333333333333334
+        }
+      },
+      "runtime_ms": {
+        "mean": 1637.393186666672,
+        "median": 1639.9222499999978,
+        "p95": 1815.9968749999975,
+        "min": 1050.104800000014,
+        "max": 1875.7713999999908
+      }
+    },
+    "raw_cases": [
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_001.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_001.png",
+        "predicted_center": {
+          "x": 721.341655682655,
+          "y": 428.3224151867194
+        },
+        "confidence": 0.07552905363506761,
+        "runtime_ms": 1741.2918999999931,
+        "detected_scale": 10.5,
+        "detected_rotation_deg": 0.0,
+        "true_center": {
+          "x": 721.766252805277,
+          "y": 429.71051667078655
+        },
+        "euclidean_error": 1.4515882496797323,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_002.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_002.png",
+        "predicted_center": {
+          "x": 329.43597987396646,
+          "y": 540.5198646689222
+        },
+        "confidence": 0.2231797401640153,
+        "runtime_ms": 1796.2626999999998,
+        "detected_scale": 10.5,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 329.99557250215184,
+          "y": 542.9717574201136
+        },
+        "euclidean_error": 2.5149397553150914,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_003.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_003.png",
+        "predicted_center": {
+          "x": 402.8669563510162,
+          "y": 364.47775177915713
+        },
+        "confidence": 0.18089901713971734,
+        "runtime_ms": 1772.3139000000003,
+        "detected_scale": 9.5,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 406.34161636147377,
+          "y": 362.1591113130238
+        },
+        "euclidean_error": 4.177242607206815,
+        "pass_5px": true,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_004.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_004.png",
+        "predicted_center": {
+          "x": 666.7157531644775,
+          "y": 600.4762936208028
+        },
+        "confidence": 0.20682761594984206,
+        "runtime_ms": 1243.053300000014,
+        "detected_scale": 9.5,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 669.2824061847678,
+          "y": 596.0740743136735
+        },
+        "euclidean_error": 5.095806369420602,
+        "pass_5px": false,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_005.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_005.png",
+        "predicted_center": {
+          "x": 569.2345323934103,
+          "y": 745.7547835887603
+        },
+        "confidence": 0.3249897407072563,
+        "runtime_ms": 1050.104800000014,
+        "detected_scale": 9.0,
+        "detected_rotation_deg": 0.0,
+        "true_center": {
+          "x": 569.0976668007722,
+          "y": 745.729887740629
+        },
+        "euclidean_error": 0.1391114434629513,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": true,
+        "pass_subpixel": true,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_006.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_006.png",
+        "predicted_center": {
+          "x": 741.7563327048358,
+          "y": 270.80438549502173
+        },
+        "confidence": 0.12097774555065,
+        "runtime_ms": 1800.8815000000027,
+        "detected_scale": 9.0,
+        "detected_rotation_deg": 0.0,
+        "true_center": {
+          "x": 741.2039277316678,
+          "y": 270.2000764468286
+        },
+        "euclidean_error": 0.8187433542379777,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": true,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_007.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_007.png",
+        "predicted_center": {
+          "x": 574.068354249511,
+          "y": 487.62248048047024
+        },
+        "confidence": 0.2333103617032369,
+        "runtime_ms": 1572.3454000000174,
+        "detected_scale": 10.0,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 574.2679597001288,
+          "y": 488.8442846609321
+        },
+        "euclidean_error": 1.2380015312229544,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_008.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_008.png",
+        "predicted_center": {
+          "x": 677.281848494513,
+          "y": 568.0446393914273
+        },
+        "confidence": 0.03506079672001006,
+        "runtime_ms": 1875.7713999999908,
+        "detected_scale": 9.0,
+        "detected_rotation_deg": 0.0,
+        "true_center": {
+          "x": 677.9969086642975,
+          "y": 566.137577634783
+        },
+        "euclidean_error": 2.036711955595868,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_009.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_009.png",
+        "predicted_center": {
+          "x": 519.8900014375618,
+          "y": 670.8964703853037
+        },
+        "confidence": 0.03966297474613893,
+        "runtime_ms": 1564.945200000011,
+        "detected_scale": 10.5,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 521.8711244588897,
+          "y": 670.7044227898739
+        },
+        "euclidean_error": 1.9904096825894344,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_010.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_010.png",
+        "predicted_center": {
+          "x": 715.2458321253496,
+          "y": 506.1846479501358
+        },
+        "confidence": 0.16850584890224285,
+        "runtime_ms": 1591.1179000000004,
+        "detected_scale": 10.5,
+        "detected_rotation_deg": 0.0,
+        "true_center": {
+          "x": 715.24640575515,
+          "y": 506.2188906170313
+        },
+        "euclidean_error": 0.03424747125359303,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": true,
+        "pass_subpixel": true,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_011.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_011.png",
+        "predicted_center": {
+          "x": 324.9939223648002,
+          "y": 336.61573516916275
+        },
+        "confidence": 0.09177232954237224,
+        "runtime_ms": 1497.6726000000156,
+        "detected_scale": 10.0,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 326.83067797616644,
+          "y": 334.6516504794838
+        },
+        "euclidean_error": 2.689107629701088,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_012.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_012.png",
+        "predicted_center": {
+          "x": 302.51076993063214,
+          "y": 665.5538856223068
+        },
+        "confidence": 0.03340745669824082,
+        "runtime_ms": 1615.6831000000125,
+        "detected_scale": 10.5,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 308.2295065038277,
+          "y": 672.0767864928688
+        },
+        "euclidean_error": 8.674801655414546,
+        "pass_5px": false,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_013.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_013.png",
+        "predicted_center": {
+          "x": 283.9174945792735,
+          "y": 327.0384557496937
+        },
+        "confidence": 0.13350951447310244,
+        "runtime_ms": 1828.3639999999934,
+        "detected_scale": 9.5,
+        "detected_rotation_deg": 0.0,
+        "true_center": {
+          "x": 285.2890531402792,
+          "y": 325.43447494487737
+        },
+        "euclidean_error": 2.1104329670679314,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_014.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_014.png",
+        "predicted_center": {
+          "x": 611.32150433082,
+          "y": 319.4217237672389
+        },
+        "confidence": 0.2439202273510118,
+        "runtime_ms": 1591.8455999999992,
+        "detected_scale": 10.0,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 613.9441372548426,
+          "y": 321.07955856411365
+        },
+        "euclidean_error": 3.102679433634184,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_015.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_015.png",
+        "predicted_center": {
+          "x": 602.3356526783502,
+          "y": 549.5356777544737
+        },
+        "confidence": 0.46441268297478044,
+        "runtime_ms": 1673.7346000000173,
+        "detected_scale": 10.0,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 601.1690120943902,
+          "y": 551.8545357326745
+        },
+        "euclidean_error": 2.59579517204431,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "FinFET"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_016.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_016.png",
+        "predicted_center": {
+          "x": 342.1933747063625,
+          "y": 693.5255602071643
+        },
+        "confidence": 0.09364847342173319,
+        "runtime_ms": 1605.0964000000079,
+        "detected_scale": 11.0,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 336.18488293568015,
+          "y": 688.4610573183254
+        },
+        "euclidean_error": 7.858190814011497,
+        "pass_5px": false,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_017.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_017.png",
+        "predicted_center": {
+          "x": 689.1264892663232,
+          "y": 330.7766536261275
+        },
+        "confidence": 0.06510527928670277,
+        "runtime_ms": 1750.126200000011,
+        "detected_scale": 10.0,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 687.5058800369301,
+          "y": 328.94049285336666
+        },
+        "euclidean_error": 2.449053012456015,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_018.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_018.png",
+        "predicted_center": {
+          "x": 710.9386709948106,
+          "y": 723.0493587210049
+        },
+        "confidence": 0.07618082980756391,
+        "runtime_ms": 1596.1432999999943,
+        "detected_scale": 9.5,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 715.3448223125845,
+          "y": 718.7809584009661
+        },
+        "euclidean_error": 6.134607626183337,
+        "pass_5px": false,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_019.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_019.png",
+        "predicted_center": {
+          "x": 725.1846642842402,
+          "y": 621.7015278883093
+        },
+        "confidence": 0.14158452551453168,
+        "runtime_ms": 1652.7433999999914,
+        "detected_scale": 10.5,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 728.1201996873049,
+          "y": 616.0561062388765
+        },
+        "euclidean_error": 6.363030229578595,
+        "pass_5px": false,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_020.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_020.png",
+        "predicted_center": {
+          "x": 674.5254270652526,
+          "y": 276.67168218389196
+        },
+        "confidence": 0.0947249730428057,
+        "runtime_ms": 1627.1011000000044,
+        "detected_scale": 9.5,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 676.8707796377921,
+          "y": 278.5349812180697
+        },
+        "euclidean_error": 2.9954235059979593,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_021.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_021.png",
+        "predicted_center": {
+          "x": 565.7584093555594,
+          "y": 398.59228282375824
+        },
+        "confidence": 0.06328403949737549,
+        "runtime_ms": 1731.8614999999795,
+        "detected_scale": 10.5,
+        "detected_rotation_deg": 0.0,
+        "true_center": {
+          "x": 566.407904409764,
+          "y": 398.9512369012822
+        },
+        "euclidean_error": 0.7420861507987803,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": true,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_022.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_022.png",
+        "predicted_center": {
+          "x": 665.9641331176356,
+          "y": 341.1143582493951
+        },
+        "confidence": 0.1279367132186889,
+        "runtime_ms": 1727.7760000000058,
+        "detected_scale": 10.0,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 662.6762884975603,
+          "y": 337.812000556626
+        },
+        "euclidean_error": 4.659988044700207,
+        "pass_5px": true,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_023.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_023.png",
+        "predicted_center": {
+          "x": 596.2388326834424,
+          "y": 270.4582434009412
+        },
+        "confidence": 0.05943952744095353,
+        "runtime_ms": 1604.471999999987,
+        "detected_scale": 9.5,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 591.1759316240717,
+          "y": 276.9105094011113
+        },
+        "euclidean_error": 8.201506183252421,
+        "pass_5px": false,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_024.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_024.png",
+        "predicted_center": {
+          "x": 645.0771141857435,
+          "y": 640.4969774341088
+        },
+        "confidence": 0.3644708792368571,
+        "runtime_ms": 1686.815500000023,
+        "detected_scale": 11.0,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 642.6265570194589,
+          "y": 642.9296787631058
+        },
+        "euclidean_error": 3.4530082799398123,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_025.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_025.png",
+        "predicted_center": {
+          "x": 675.8750224121806,
+          "y": 500.74361834716933
+        },
+        "confidence": 0.03346675161079116,
+        "runtime_ms": 1757.4782000000084,
+        "detected_scale": 10.0,
+        "detected_rotation_deg": -1.25,
+        "true_center": {
+          "x": 675.8747418004365,
+          "y": 496.8249874776921
+        },
+        "euclidean_error": 3.9186308795244797,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_026.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_026.png",
+        "predicted_center": {
+          "x": 260.3124334493589,
+          "y": 720.2697388450531
+        },
+        "confidence": 0.029772468054736212,
+        "runtime_ms": 1606.8951999999967,
+        "detected_scale": 9.0,
+        "detected_rotation_deg": 2.5,
+        "true_center": {
+          "x": 253.08803798432967,
+          "y": 720.879053707825
+        },
+        "euclidean_error": 7.250045133454641,
+        "pass_5px": false,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_027.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_027.png",
+        "predicted_center": {
+          "x": 277.13663220737305,
+          "y": 361.1464693460638
+        },
+        "confidence": 0.250103155771891,
+        "runtime_ms": 1566.7594000000236,
+        "detected_scale": 9.5,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 281.23328386668663,
+          "y": 354.8163950449247
+        },
+        "euclidean_error": 7.5400527501933245,
+        "pass_5px": false,
+        "pass_4px": false,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_028.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_028.png",
+        "predicted_center": {
+          "x": 579.7216873898099,
+          "y": 486.61742424053506
+        },
+        "confidence": 0.19876130882899043,
+        "runtime_ms": 1617.9268000000206,
+        "detected_scale": 10.0,
+        "detected_rotation_deg": 0.0,
+        "true_center": {
+          "x": 579.5896504667837,
+          "y": 486.0581257074268
+        },
+        "euclidean_error": 0.5746726008600296,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": true,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_029.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_029.png",
+        "predicted_center": {
+          "x": 438.55166582342935,
+          "y": 368.6074300136181
+        },
+        "confidence": 0.1827583909034732,
+        "runtime_ms": 1700.3963000000226,
+        "detected_scale": 11.0,
+        "detected_rotation_deg": 1.25,
+        "true_center": {
+          "x": 442.1581859414915,
+          "y": 366.9519392060124
+        },
+        "euclidean_error": 3.9683292675953954,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": false,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      },
+      {
+        "reference_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\reference_030.png",
+        "search_file": "D:\\SemiconFINFETwork\\results\\benchmark_dataset\\search_030.png",
+        "predicted_center": {
+          "x": 477.9559744442502,
+          "y": 288.85211969050096
+        },
+        "confidence": 0.10021742184956958,
+        "runtime_ms": 1674.8163999999974,
+        "detected_scale": 9.5,
+        "detected_rotation_deg": 0.0,
+        "true_center": {
+          "x": 476.64019811491846,
+          "y": 289.01691902085804
+        },
+        "euclidean_error": 1.3260566232691156,
+        "pass_5px": true,
+        "pass_4px": true,
+        "pass_2px": true,
+        "pass_1px": false,
+        "pass_subpixel": false,
+        "architecture": "DRAM"
+      }
+    ]
+  }
+}

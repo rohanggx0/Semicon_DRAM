@@ -1,0 +1,6 @@
+pair_id,architecture,reference_file,search_file,true_x,true_y,scale_ratio,relative_rotation_deg,blur_sigma,shot_dose,gaussian_std,charging_strength
+1,FinFET,reference/ref_0001.png,search/search_0001.png,461.9093,396.8478,9.8423,-1.223,0.5513,134.7144,8.5335,0.0
+2,DRAM,reference/ref_0002.png,search/search_0002.png,667.5225,460.276,9.5986,1.3152,0.3443,105.2875,4.0015,20.0
+3,FinFET,reference/ref_0003.png,search/search_0003.png,780.8937,218.8557,10.501,1.7622,0.7524,192.5203,5.3867,10.0
+4,DRAM,reference/ref_0004.png,search/search_0004.png,387.2011,226.5409,9.7103,1.5339,0.425,244.7794,3.0293,0.0
+5,FinFET,reference/ref_0005.png,search/search_0005.png,385.452,233.8157,10.1214,1.0975,1.0816,191.1953,4.3974,0.0

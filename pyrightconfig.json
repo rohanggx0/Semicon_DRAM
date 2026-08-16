@@ -1,0 +1,11 @@
+{
+  "typeCheckingMode": "off",
+  "reportMissingImports": "none",
+  "reportMissingTypeStubs": "none",
+  "reportGeneralTypeIssues": "none",
+  "extraPaths": [
+    "D:\\eSIM\\FOSSEE\\KiCad\\Lib\\site-packages",
+    "D:\\eSIM\\FOSSEE\\KiCad\\bin\\Lib\\site-packages",
+    "d:\\SemiconFINFETwork"
+  ]
+}

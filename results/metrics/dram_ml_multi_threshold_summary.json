@@ -1,0 +1,54 @@
+{
+  "dataset_1_synthetic": {
+    "classical_cv": {
+      "total_pairs": 30,
+      "pass_5px": 100.0,
+      "pass_4px": 100.0,
+      "pass_2px": 100.0,
+      "pass_1px": 100.0,
+      "subpixel_0_5px": 100.0,
+      "mean_error_px": 0.041843413217438424,
+      "median_error_px": 0.032837866295443024,
+      "worst_case_max_error_px": 0.13748322897898144,
+      "avg_runtime_ms": 2361.2279966666683
+    },
+    "pytorch_ml": {
+      "total_pairs": 30,
+      "pass_5px": 93.33333333333333,
+      "pass_4px": 93.33333333333333,
+      "pass_2px": 93.33333333333333,
+      "pass_1px": 93.33333333333333,
+      "subpixel_0_5px": 93.33333333333333,
+      "mean_error_px": 0.6364809674312378,
+      "median_error_px": 0.03736914669065868,
+      "worst_case_max_error_px": 8.928167565559004,
+      "avg_runtime_ms": 4665.3891633333305
+    }
+  },
+  "dataset_2_engineered": {
+    "classical_cv": {
+      "total_pairs": 30,
+      "pass_5px": 100.0,
+      "pass_4px": 100.0,
+      "pass_2px": 100.0,
+      "pass_1px": 100.0,
+      "subpixel_0_5px": 100.0,
+      "mean_error_px": 0.029008809674070227,
+      "median_error_px": 0.027961750846418665,
+      "worst_case_max_error_px": 0.08401499899537455,
+      "avg_runtime_ms": 5500.211316666659
+    },
+    "pytorch_ml": {
+      "total_pairs": 30,
+      "pass_5px": 96.66666666666667,
+      "pass_4px": 96.66666666666667,
+      "pass_2px": 96.66666666666667,
+      "pass_1px": 96.66666666666667,
+      "subpixel_0_5px": 96.66666666666667,
+      "mean_error_px": 0.31966989154815156,
+      "median_error_px": 0.027624337452700598,
+      "worst_case_max_error_px": 8.683770087239697,
+      "avg_runtime_ms": 7882.585896666662
+    }
+  }
+}

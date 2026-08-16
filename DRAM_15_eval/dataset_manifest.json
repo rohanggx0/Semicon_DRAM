@@ -1,0 +1,15 @@
+{
+  "dataset_name": "Drift-Sense DRAM 30-Pair Engineered Dataset",
+  "version": "v1.7_post_rotation_corrected",
+  "architecture": "DRAM",
+  "total_pairs": 15,
+  "difficulty_tiers": {
+    "Easy": "Cases 1-5: ~10x scale, 0\u00b0 rotation, clean low noise",
+    "Scale": "Cases 6-10: Scale range 9.1x - 10.9x",
+    "Rotation": "Cases 11-15: Rotation range \u00b11.0\u00b0 to \u00b12.0\u00b0",
+    "SEM Degradation": "Cases 16-20: Heavy blur, low dose, gaussian noise, charging",
+    "Combined": "Cases 21-25: Simultaneous scale, rotation, degradation, offset center",
+    "Hard DRAM": "Cases 26-30: Edge placement, periodic ambiguity, severe noise & charging"
+  },
+  "labels_file": "labels.csv"
+}

@@ -1,0 +1,18 @@
+{
+  "python.defaultInterpreterPath": "D:\\eSIM\\FOSSEE\\KiCad\\bin\\python.exe",
+  "python.analysis.typeCheckingMode": "off",
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportMissingImports": "none",
+    "reportMissingTypeStubs": "none",
+    "reportGeneralTypeIssues": "none",
+    "reportOptionalMemberAccess": "none",
+    "reportOptionalSubscript": "none",
+    "reportPrivateImportUsage": "none",
+    "reportWildcardImportFromLibrary": "none"
+  },
+  "python.analysis.extraPaths": [
+    "D:\\eSIM\\FOSSEE\\KiCad\\Lib\\site-packages",
+    "D:\\eSIM\\FOSSEE\\KiCad\\bin\\Lib\\site-packages",
+    "D:\\SemiconFINFETwork"
+  ]
+}

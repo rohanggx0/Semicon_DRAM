@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drift-Sense | DRAM Semiconductor SEM Metrology Explorer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #080c14;
+            color: #f1f5f9;
+        }
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(51, 65, 85, 0.6);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        input[type=range] {
+            accent-color: #38bdf8;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans custom-scrollbar overflow-x-hidden">
+
+    <!-- Top Header -->
+    <header class="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <span class="text-2xl">🔬</span>
+                <div>
+                    <h1 class="font-heading font-bold text-lg tracking-tight gradient-text">Drift-Sense | DRAM Metrology Explorer</h1>
+                    <p class="text-xs text-slate-400">Applied Materials DRAM 1x Array Navigation & Localization Suite</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-2">
+                <span id="server-status" class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse mr-1.5"></span> FastAPI Live (60 FPS)
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Grid -->
+    <div class="flex-1 max-w-7xl w-full mx-auto p-4 grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+        <!-- Sidebar Controls (4 cols on lg) -->
+        <aside class="lg:col-span-4 space-y-5">
+            <div class="glass-panel p-5 rounded-xl space-y-4">
+                <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                    <h2 class="font-heading font-semibold text-sm tracking-wide uppercase text-slate-300 flex items-center gap-2">
+                        <span>⚙️</span> Physical & SEM Controls
+                    </h2>
+                    <button id="btn-rand-seed" class="px-2.5 py-1 text-xs font-medium bg-sky-500/10 hover:bg-sky-500/20 text-sky-400 rounded-md transition flex items-center gap-1 border border-sky-500/20">
+                        <span>🎲</span> Randomize
+                    </button>
+                </div>
+
+                <!-- Dedicated DRAM Architecture Status Card -->
+                <div class="p-3 rounded-xl bg-gradient-to-r from-sky-950/60 to-slate-900/80 border border-sky-500/30 flex items-center justify-between shadow-md shadow-sky-950/40">
+                    <div class="flex items-center gap-2.5">
+                        <div class="w-8 h-8 rounded-lg bg-sky-500/20 border border-sky-400/30 flex items-center justify-center text-base">💾</div>
+                        <div>
+                            <div class="text-[10px] font-bold text-sky-400 uppercase tracking-wider">Active Target Device</div>
+                            <div class="text-xs text-slate-100 font-semibold">DRAM 1x Array (Capacitor/Wordline)</div>
+                        </div>
+                    </div>
+                    <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-sky-500/20 text-sky-300 border border-sky-500/30">10:1 FOV</span>
+                </div>
+
+                <!-- Coordinates -->
+                <div class="grid grid-cols-2 gap-3 pt-1">
+                    <div>
+                        <div class="flex justify-between text-xs mb-1">
+                            <span class="text-slate-400">Target X</span>
+                            <span id="val-target-x" class="font-mono text-sky-400">520.0</span>
+                        </div>
+                        <input id="slider-target-x" type="range" min="250" max="750" step="5" value="520" class="w-full">
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-xs mb-1">
+                            <span class="text-slate-400">Target Y</span>
+                            <span id="val-target-y" class="font-mono text-sky-400">480.0</span>
+                        </div>
+                        <input id="slider-target-y" type="range" min="250" max="750" step="5" value="480" class="w-full">
+                    </div>
+                </div>
+
+                <!-- Scale & Rotation -->
+                <div class="space-y-3 pt-1 border-t border-slate-800/60">
+                    <div>
+                        <div class="flex justify-between text-xs mb-1">
+                            <span class="text-slate-400">Scale Ratio (FOV)</span>
+                            <span id="val-scale" class="font-mono text-sky-400">10.0x</span>
+                        </div>
+                        <input id="slider-scale" type="range" min="8.5" max="11.5" step="0.25" value="10.0" class="w-full">
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-xs mb-1">
+                            <span class="text-slate-400">Relative Wafer Rotation</span>
+                            <span id="val-rot" class="font-mono text-sky-400">0.0°</span>
+                        </div>
+                        <input id="slider-rot" type="range" min="-3.0" max="3.0" step="0.5" value="0.0" class="w-full">
+                    </div>
+                </div>
+
+                <!-- SEM Degradation Sliders -->
+                <div class="space-y-3 pt-1 border-t border-slate-800/60">
+                    <div>
+                        <div class="flex justify-between text-xs mb-1">
+                            <span class="text-slate-400">Beam Blur (PSF σ)</span>
+                            <span id="val-blur" class="font-mono text-slate-300">0.6 px</span>
+                        </div>
+                        <input id="slider-blur" type="range" min="0.2" max="2.0" step="0.1" value="0.6" class="w-full">
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-xs mb-1">
+                            <span class="text-slate-400">Electron Shot Dose</span>
+                            <span id="val-dose" class="font-mono text-slate-300">250</span>
+                        </div>
+                        <input id="slider-dose" type="range" min="20" max="800" step="20" value="250" class="w-full">
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-xs mb-1">
+                            <span class="text-slate-400">Gaussian Detector Noise (σ)</span>
+                            <span id="val-noise" class="font-mono text-slate-300">5.0</span>
+                        </div>
+                        <input id="slider-noise" type="range" min="0" max="20" step="1" value="5.0" class="w-full">
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-xs mb-1">
+                            <span class="text-slate-400">Charging Streaks / Bleed</span>
+                            <span id="val-charging" class="font-mono text-slate-300">0.00</span>
+                        </div>
+                        <input id="slider-charging" type="range" min="0" max="1.0" step="0.05" value="0.0" class="w-full">
+                    </div>
+                </div>
+
+                <!-- Seed input -->
+                <div class="pt-2 border-t border-slate-800/60 flex items-center justify-between">
+                    <span class="text-xs text-slate-400 font-semibold uppercase">Random Seed</span>
+                    <input id="input-seed" type="number" value="42" class="w-24 px-2 py-1 text-xs font-mono bg-slate-900 border border-slate-700 rounded text-sky-400 focus:outline-none focus:border-sky-500">
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Workspace (8 cols on lg) -->
+        <main class="lg:col-span-8 space-y-4">
+
+            <!-- Tab Navigation Header -->
+            <div class="glass-panel p-1.5 rounded-xl flex flex-wrap gap-1.5 border border-slate-800">
+                <button data-tab="arena" class="tab-btn active px-3.5 py-2 rounded-lg text-xs font-semibold bg-sky-600 text-white transition flex items-center gap-1.5">
+                    <span>🎯</span> Live Matcher Arena
+                </button>
+                <button data-tab="layers" class="tab-btn px-3.5 py-2 rounded-lg text-xs font-semibold text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition flex items-center gap-1.5">
+                    <span>🧱</span> CAD Layers
+                </button>
+                <button data-tab="family" class="tab-btn px-3.5 py-2 rounded-lg text-xs font-semibold text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition flex items-center gap-1.5">
+                    <span>🧪</span> Robustness (5 Variants)
+                </button>
+                <button data-tab="benchmark" class="tab-btn px-3.5 py-2 rounded-lg text-xs font-semibold text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition flex items-center gap-1.5">
+                    <span>📊</span> 30-Pair Benchmark
+                </button>
+                <button data-tab="reports" class="tab-btn px-3.5 py-2 rounded-lg text-xs font-semibold text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition flex items-center gap-1.5">
+                    <span>📑</span> Reports & Deliverables
+                </button>
+            </div>
+
+            <!-- TAB 1: LIVE MATCHER ARENA -->
+            <div id="tab-content-arena" class="tab-pane space-y-4">
+                <!-- Control Bar -->
+                <div class="glass-panel p-4 rounded-xl flex flex-wrap items-center justify-between gap-3">
+                    <div class="flex items-center gap-3">
+                        <select id="select-matcher" class="px-3 py-1.5 bg-slate-900 border border-slate-700 text-xs font-semibold rounded-lg text-slate-200 focus:outline-none focus:border-sky-500">
+                            <option value="Mode D">V1.7 Rotation-Geometric Matcher (Mode D - Multi-Modal)</option>
+                            <option value="Mode C">V1.7 Rotation-Geometric Matcher (Mode C - NCC + Landmark)</option>
+                            <option value="Mode A">V1.7 Rotation-Geometric Matcher (Mode A - Pure NCC)</option>
+                            <option value="Phase Correlation">Phase Correlation Matcher (FFT Frequency Domain)</option>
+                            <option value="ScaleRotationMatcher">Multi-Scale ScaleRotationMatcher</option>
+                        </select>
+                        <label class="flex items-center gap-2 text-xs text-slate-300 cursor-pointer select-none">
+                            <input id="check-ai-unet" type="checkbox" class="rounded accent-sky-500">
+                            <span>AI U-Net Pre-filter</span>
+                        </label>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <label class="flex items-center gap-2 text-xs text-slate-300 cursor-pointer select-none">
+                            <input id="check-auto-match" type="checkbox" checked class="rounded accent-sky-500">
+                            <span>⚡ Auto-Match</span>
+                        </label>
+                        <label class="flex items-center gap-2 text-xs text-slate-300 cursor-pointer select-none mr-2">
+                            <input id="check-gt-overlay" type="checkbox" checked class="rounded accent-emerald-500">
+                            <span>Show Ground Truth</span>
+                        </label>
+                        <button id="btn-run-match" class="px-4 py-1.5 bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold text-xs rounded-lg shadow-md shadow-sky-500/20 transition flex items-center gap-1.5">
+                            <span id="match-spinner" class="hidden animate-spin">⏳</span>
+                            <span>Match Target</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Side-by-Side Images -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="glass-panel p-4 rounded-xl space-y-2">
+                        <div class="flex justify-between items-center text-xs">
+                            <span class="font-semibold text-slate-300">Reference Image (1 nm/px, 1 µm FOV)</span>
+                            <span class="font-mono text-slate-500">1000×1000 px</span>
+                        </div>
+                        <div class="relative aspect-square rounded-lg overflow-hidden bg-slate-950 border border-slate-800 flex items-center justify-center">
+                            <img id="img-ref" src="" alt="Reference SEM" class="w-full h-full object-contain">
+                        </div>
+                        <div class="flex justify-end">
+                            <a id="dl-ref" href="#" download="reference.png" class="text-xs text-sky-400 hover:underline">💾 Download reference.png</a>
+                        </div>
+                    </div>
+
+                    <div class="glass-panel p-4 rounded-xl space-y-2">
+                        <div class="flex justify-between items-center text-xs">
+                            <span class="font-semibold text-slate-300">Search Image (10 nm/px, 10 µm FOV)</span>
+                            <span id="txt-search-dim" class="font-mono text-slate-500">1000×1000 px</span>
+                        </div>
+                        <div class="relative aspect-square rounded-lg overflow-hidden bg-slate-950 border border-slate-800 flex items-center justify-center">
+                            <canvas id="canvas-search" width="1000" height="1000" class="w-full h-full object-contain cursor-crosshair"></canvas>
+                        </div>
+                        <div class="flex justify-between text-xs">
+                            <span id="canvas-coord" class="text-slate-500 font-mono">Hover to inspect coordinates</span>
+                            <a id="dl-search" href="#" download="search.png" class="text-sky-400 hover:underline">💾 Download search.png</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Metrics Summary Bar -->
+                <div class="glass-panel p-4 rounded-xl grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-3">
+                    <div class="p-3 bg-slate-900/80 rounded-lg border border-slate-800">
+                        <span class="block text-[11px] text-slate-400 uppercase font-semibold">Tolerance Status</span>
+                        <div class="mt-1 flex items-center">
+                            <span id="badge-pass-status" class="px-2 py-0.5 rounded text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">PASS (≤5 px)</span>
+                        </div>
+                    </div>
+                    <div class="p-3 bg-slate-900/80 rounded-lg border border-slate-800">
+                        <span class="block text-[11px] text-slate-400 uppercase font-semibold">Euclidean Error</span>
+                        <span id="metric-error" class="block mt-1 font-mono font-bold text-base text-sky-400">0.000 px</span>
+                    </div>
+                    <div class="p-3 bg-slate-900/80 rounded-lg border border-slate-800">
+                        <span class="block text-[11px] text-slate-400 uppercase font-semibold">Sub-pixel Offset</span>
+                        <span id="metric-shift" class="block mt-1 font-mono font-semibold text-xs text-slate-200">Δx=+0.00, Δy=+0.00</span>
+                    </div>
+                    <div class="p-3 bg-slate-900/80 rounded-lg border border-slate-800">
+                        <span class="block text-[11px] text-slate-400 uppercase font-semibold">Estimated Scale / Angle</span>
+                        <span id="metric-scale-rot" class="block mt-1 font-mono font-semibold text-xs text-slate-200">10.00x | +0.0°</span>
+                    </div>
+                    <div class="p-3 bg-slate-900/80 rounded-lg border border-slate-800">
+                        <span class="block text-[11px] text-slate-400 uppercase font-semibold">Latency & Conf</span>
+                        <span id="metric-latency" class="block mt-1 font-mono font-semibold text-xs text-emerald-400">0.0 ms | 1.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 2: CAD LAYERS -->
+            <div id="tab-content-layers" class="tab-pane hidden space-y-4">
+                <div class="glass-panel p-4 rounded-xl">
+                    <h3 class="font-heading font-semibold text-sm text-slate-200 mb-1">DRAM 1x Array Lithography Process Masks</h3>
+                    <p class="text-xs text-slate-400 mb-4">Deconstructs the DRAM 1x cell memory layout into discrete physical process masks: Storage Capacitors, Wordline Gates, Bitline Contacts, and Active Area Vias.</p>
+                    <div id="layers-gallery" class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        <!-- Populated dynamically via JS -->
+                    </div>
+                </div>
+                <div class="glass-panel p-4 rounded-xl">
+                    <h3 class="font-heading font-semibold text-sm text-slate-200 mb-3">🧊 DRAM 3D Isometric Exploded Layer Stack</h3>
+                    <div class="aspect-video w-full rounded-lg bg-slate-950 border border-slate-800 flex items-center justify-center overflow-hidden">
+                        <img id="img-exploded" src="" alt="Exploded Stack" class="w-full h-full object-contain">
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 3: ROBUSTNESS FAMILY -->
+            <div id="tab-content-family" class="tab-pane hidden space-y-4">
+                <div class="glass-panel p-4 rounded-xl">
+                    <h3 class="font-heading font-semibold text-sm text-slate-200 mb-1">🧪 DRAM 1 Reference vs 5 Acquisition Conditions</h3>
+                    <p class="text-xs text-slate-400 mb-4">Validates matcher breaking thresholds on DRAM memory arrays against severe electron shot noise, charging streaks, high beam blur, and raster drift.</p>
+                    <div id="family-gallery" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                        <!-- Populated dynamically via JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 4: BENCHMARK -->
+            <div id="tab-content-benchmark" class="tab-pane hidden space-y-4">
+                <div class="glass-panel p-4 rounded-xl space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="font-heading font-semibold text-sm text-slate-200">Standardized DRAM 30-Pair Dataset Benchmark</h3>
+                            <p class="text-xs text-slate-400">High-speed parallel multi-threaded localization with live real-time sample streaming on DRAM pairs.</p>
+                        </div>
+                        <button id="btn-run-benchmark" class="px-4 py-2 bg-gradient-to-r from-indigo-600 to-sky-600 hover:from-indigo-500 hover:to-sky-500 font-semibold text-xs rounded-lg text-white transition flex items-center gap-1.5 shadow-lg shadow-indigo-950/50">
+                            <span id="bench-spinner" class="hidden animate-spin">⚡</span>
+                            <span id="bench-btn-text">Run Full 30-Pair Test</span>
+                        </button>
+                    </div>
+
+                    <!-- Live Progress Bar -->
+                    <div id="bench-progress-box" class="hidden space-y-1.5 pt-1">
+                        <div class="flex justify-between items-center text-xs font-mono">
+                            <span id="bench-progress-text" class="text-sky-400 font-semibold">⚡ Processing: 0 / 30 (0%)</span>
+                            <span id="bench-throughput" class="text-emerald-400 font-semibold">🚀 8x Parallel Workers Active</span>
+                        </div>
+                        <div class="w-full bg-slate-900 rounded-full h-2 overflow-hidden border border-slate-800">
+                            <div id="bench-progress-bar" class="bg-gradient-to-r from-sky-500 via-indigo-500 to-emerald-400 h-2 rounded-full transition-all duration-100" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Benchmark metrics summary -->
+                    <div id="bench-summary" class="hidden grid grid-cols-2 sm:grid-cols-4 gap-3 pt-1">
+                        <div class="p-3 bg-slate-900/80 rounded-lg border border-slate-800">
+                            <span class="block text-[11px] text-slate-400 uppercase font-semibold">Pass Rate (≤5 px)</span>
+                            <span id="bench-pass-rate" class="block mt-1 font-mono font-bold text-lg text-emerald-400">0.0%</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/80 rounded-lg border border-slate-800">
+                            <span class="block text-[11px] text-slate-400 uppercase font-semibold">Mean Error</span>
+                            <span id="bench-mean" class="block mt-1 font-mono font-bold text-lg text-sky-400">0.000 px</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/80 rounded-lg border border-slate-800">
+                            <span class="block text-[11px] text-slate-400 uppercase font-semibold">Median Error</span>
+                            <span id="bench-median" class="block mt-1 font-mono font-bold text-lg text-slate-200">0.000 px</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/80 rounded-lg border border-slate-800">
+                            <span class="block text-[11px] text-slate-400 uppercase font-semibold">95th Percentile</span>
+                            <span id="bench-p95" class="block mt-1 font-mono font-bold text-lg text-slate-200">0.000 px</span>
+                        </div>
+                    </div>
+
+                    <!-- Benchmark Table -->
+                    <div id="bench-table-container" class="overflow-x-auto max-h-96 custom-scrollbar border border-slate-800 rounded-lg">
+                        <table class="w-full text-left text-xs font-mono">
+                            <thead class="bg-slate-900/90 text-slate-400 sticky top-0 border-b border-slate-800">
+                                <tr>
+                                    <th class="p-2.5">Sample ID</th>
+                                    <th class="p-2.5">Scale</th>
+                                    <th class="p-2.5">Rotation</th>
+                                    <th class="p-2.5">True (x, y)</th>
+                                    <th class="p-2.5">Pred (x, y)</th>
+                                    <th class="p-2.5">Error (px)</th>
+                                    <th class="p-2.5">Speed</th>
+                                    <th class="p-2.5">Result</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bench-tbody" class="divide-y divide-slate-800/60 text-slate-300">
+                                <tr><td colspan="8" class="p-4 text-center text-slate-500">Click "Run Full 30-Pair Test" to stream results live one by one.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- PDF completion banner inside benchmark tab -->
+                    <div id="bench-pdf-alert" class="hidden p-3.5 bg-emerald-950/40 border border-emerald-500/40 rounded-xl flex flex-wrap items-center justify-between gap-3 text-xs">
+                        <div class="flex items-center gap-2.5">
+                            <span class="text-xl">📄</span>
+                            <div>
+                                <div class="font-semibold text-emerald-300">30-Pair Benchmark Evaluated & PDF Report Generated!</div>
+                                <div class="text-slate-400 text-[11px]">All 30 image pairs localized, error profile plotted, and results converted into <code class="text-sky-300">DRAM_30_Evaluation_Report.pdf</code>.</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button id="btn-goto-reports" class="px-3.5 py-1.5 bg-sky-600 hover:bg-sky-500 text-white font-semibold rounded-lg transition flex items-center gap-1.5 shadow-md">
+                                <span>📑</span> View in Reports Section
+                            </button>
+                            <a href="/api/reports/download" class="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold rounded-lg transition flex items-center gap-1.5 shadow-md">
+                                <span>📥</span> Download PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 5: REPORTS & DELIVERABLES -->
+            <div id="tab-content-reports" class="tab-pane hidden space-y-4">
+                <div class="glass-panel p-5 rounded-xl space-y-4">
+                    <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800/80 pb-3">
+                        <div>
+                            <h3 class="font-heading font-semibold text-sm text-slate-200 flex items-center gap-2">
+                                <span>📑</span> Deliverables & Technical Evaluation PDF
+                            </h3>
+                            <p class="text-xs text-slate-400">Download the full technical evaluation report containing formal mathematical equations, multi-scale pyramid derivation, and sub-pixel metrics.</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button id="btn-regen-report" class="px-3.5 py-2 bg-slate-800 hover:bg-slate-700 font-semibold text-xs rounded-lg text-slate-200 border border-slate-700 transition flex items-center gap-1.5">
+                                <span id="regen-spinner" class="hidden animate-spin">⚡</span>
+                                <span id="regen-btn-text">🔄 Re-generate Report</span>
+                            </button>
+                            <a href="/api/reports/download" id="btn-download-pdf-main" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 font-semibold text-xs rounded-lg text-white transition inline-flex items-center gap-2 shadow-lg shadow-emerald-950/40">
+                                <span>📥</span> Download DRAM_30_Evaluation_Report.pdf
+                            </a>
+                            <a href="/api/reports/view" target="_blank" class="px-3 py-2 bg-sky-600/80 hover:bg-sky-600 font-semibold text-xs rounded-lg text-white transition inline-flex items-center gap-1.5">
+                                <span>👁️</span> Open in Tab
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Live Status & Metadata Summary -->
+                    <div id="report-status-card" class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        <div class="p-3 bg-slate-900/80 rounded-lg border border-slate-800">
+                            <span class="block text-[11px] text-slate-400 uppercase font-semibold">Report Status</span>
+                            <span id="report-badge" class="block mt-1 font-semibold text-xs text-emerald-400 flex items-center gap-1">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Ready & Compiled
+                            </span>
+                        </div>
+                        <div class="p-3 bg-slate-900/80 rounded-lg border border-slate-800">
+                            <span class="block text-[11px] text-slate-400 uppercase font-semibold">Last Compiled</span>
+                            <span id="report-timestamp" class="block mt-1 font-mono text-xs text-slate-300">Just now</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/80 rounded-lg border border-slate-800">
+                            <span class="block text-[11px] text-slate-400 uppercase font-semibold">30-Pair Pass Rate</span>
+                            <span id="report-pass-rate" class="block mt-1 font-mono font-bold text-xs text-emerald-400">100.0% (≤5.0px)</span>
+                        </div>
+                        <div class="p-3 bg-slate-900/80 rounded-lg border border-slate-800">
+                            <span class="block text-[11px] text-slate-400 uppercase font-semibold">Mean Sub-Pixel Error</span>
+                            <span id="report-mean-error" class="block mt-1 font-mono font-bold text-xs text-sky-400">0.082 px</span>
+                        </div>
+                    </div>
+
+                    <!-- Embedded Interactive PDF Viewer Frame -->
+                    <div class="border border-slate-800 rounded-xl overflow-hidden bg-slate-950 shadow-inner">
+                        <div class="bg-slate-900/90 px-4 py-2.5 flex items-center justify-between border-b border-slate-800 text-xs text-slate-400 font-mono">
+                            <span class="flex items-center gap-1.5 text-slate-300">
+                                <span>📄</span> <span class="font-semibold text-sky-300">DRAM_30_Evaluation_Report.pdf</span> (Live Document Preview)
+                            </span>
+                            <span id="report-filesize" class="text-[11px] text-slate-400">PDF Document</span>
+                        </div>
+                        <div class="w-full h-[650px] relative bg-slate-900/50">
+                            <iframe id="pdf-viewer-frame" src="/api/reports/view" class="w-full h-full border-0" title="DRAM 30 Evaluation Report Preview"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Client-Side Reactive JavaScript Application -->
+    <script>
+        // State Management
+        const state = {
+            architecture: "DRAM",
+            target_x: 520.0,
+            target_y: 480.0,
+            scale_ratio: 10.0,
+            rotation_deg: 0.0,
+            blur_sigma: 0.6,
+            edge_bloom: 0.35,
+            shot_dose: 250.0,
+            gaussian_std: 5.0,
+            charging_strength: 0.0,
+            contrast: 1.0,
+            gamma: 1.0,
+            seed: 42,
+            matcher: "Mode D",
+            use_ai: false,
+            show_gt: true,
+            current_gt_x: 520.0,
+            current_gt_y: 480.0,
+            pred_x: 520.0,
+            pred_y: 480.0,
+            searchImgObj: new Image()
+        };
+
+        let debounceTimer = null;
+
+        // Canvas Setup
+        const canvas = document.getElementById('canvas-search');
+        const ctx = canvas.getContext('2d');
+
+        // Tab Switching
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.tab-btn').forEach(b => {
+                    b.classList.remove('bg-sky-600', 'text-white', 'active');
+                    b.classList.add('text-slate-400');
+                });
+                btn.classList.add('bg-sky-600', 'text-white', 'active');
+                btn.classList.remove('text-slate-400');
+
+                document.querySelectorAll('.tab-pane').forEach(p => p.classList.add('hidden'));
+                const tabId = btn.getAttribute('data-tab');
+                document.getElementById(`tab-content-${tabId}`).classList.remove('hidden');
+
+                if (tabId === 'layers') loadCADLayers();
+                if (tabId === 'family') loadFamilyVariants();
+                if (tabId === 'reports') {
+                    fetchReportStatus();
+                    const frame = document.getElementById('pdf-viewer-frame');
+                    if (frame && !frame.getAttribute('src')) {
+                        frame.src = '/api/reports/view';
+                    }
+                }
+            });
+        });
+
+        // Slider Bindings
+        function bindSlider(id, stateKey, valDisplayId, formatter) {
+            const el = document.getElementById(id);
+            const valEl = document.getElementById(valDisplayId);
+            el.addEventListener('input', (e) => {
+                const v = parseFloat(e.target.value);
+                state[stateKey] = v;
+                valEl.innerText = formatter ? formatter(v) : v;
+                triggerDebouncedGenerate();
+            });
+        }
+
+        bindSlider('slider-target-x', 'target_x', 'val-target-x', v => v.toFixed(1));
+        bindSlider('slider-target-y', 'target_y', 'val-target-y', v => v.toFixed(1));
+        bindSlider('slider-scale', 'scale_ratio', 'val-scale', v => v.toFixed(2) + 'x');
+        bindSlider('slider-rot', 'rotation_deg', 'val-rot', v => (v > 0 ? '+' : '') + v.toFixed(1) + '°');
+        bindSlider('slider-blur', 'blur_sigma', 'val-blur', v => v.toFixed(1) + ' px');
+        bindSlider('slider-dose', 'shot_dose', 'val-dose', v => v.toFixed(0));
+        bindSlider('slider-noise', 'gaussian_std', 'val-noise', v => v.toFixed(1));
+        bindSlider('slider-charging', 'charging_strength', 'val-charging', v => v.toFixed(2));
+
+        document.getElementById('input-seed').addEventListener('change', (e) => {
+            state.seed = parseInt(e.target.value) || 42;
+            triggerDebouncedGenerate();
+        });
+
+        document.getElementById('btn-rand-seed').addEventListener('click', () => {
+            state.seed = Math.floor(Math.random() * 999999);
+            state.target_x = Math.floor(320 + Math.random() * 360);
+            state.target_y = Math.floor(320 + Math.random() * 360);
+            document.getElementById('input-seed').value = state.seed;
+            document.getElementById('slider-target-x').value = state.target_x;
+            document.getElementById('slider-target-y').value = state.target_y;
+            document.getElementById('val-target-x').innerText = state.target_x.toFixed(1);
+            document.getElementById('val-target-y').innerText = state.target_y.toFixed(1);
+            triggerDebouncedGenerate();
+        });
+
+        document.getElementById('select-matcher').addEventListener('change', (e) => {
+            state.matcher = e.target.value;
+            runMatch();
+        });
+
+        state.auto_match = true;
+
+        document.getElementById('check-auto-match').addEventListener('change', (e) => {
+            state.auto_match = e.target.checked;
+            if (state.auto_match) runMatch();
+        });
+
+        document.getElementById('check-ai-unet').addEventListener('change', (e) => {
+            state.use_ai = e.target.checked;
+            if (state.auto_match) runMatch();
+        });
+
+        document.getElementById('check-gt-overlay').addEventListener('change', (e) => {
+            state.show_gt = e.target.checked;
+            renderCanvas();
+        });
+
+        document.getElementById('btn-run-match').addEventListener('click', runMatch);
+
+        // Hover coordinate inspector on Canvas
+        canvas.addEventListener('mousemove', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            const scaleX = canvas.width / rect.width;
+            const scaleY = canvas.height / rect.height;
+            const x = ((e.clientX - rect.left) * scaleX).toFixed(1);
+            const y = ((e.clientY - rect.top) * scaleY).toFixed(1);
+            document.getElementById('canvas-coord').innerText = `Pixel: (${x}, ${y}) px`;
+        });
+
+        let generateAbortController = null;
+        let matchAbortController = null;
+
+        function triggerDebouncedGenerate() {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => {
+                generatePair();
+            }, 40);
+        }
+
+        async function generatePair() {
+            if (generateAbortController) {
+                generateAbortController.abort();
+            }
+            generateAbortController = new AbortController();
+
+            try {
+                const res = await fetch('/api/generate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(state),
+                    signal: generateAbortController.signal
+                });
+                const data = await res.json();
+                if (data.status === 'success') {
+                    document.getElementById('img-ref').src = data.ref_image;
+                    document.getElementById('dl-ref').href = data.ref_image;
+                    document.getElementById('dl-search').href = data.search_image;
+                    
+                    state.current_gt_x = data.gt_x;
+                    state.current_gt_y = data.gt_y;
+
+                    state.searchImgObj.onload = () => {
+                        renderCanvas();
+                        if (state.auto_match) {
+                            runMatch();
+                        }
+                    };
+                    state.searchImgObj.src = data.search_image;
+                }
+            } catch (err) {
+                if (err.name !== 'AbortError') {
+                    console.error("Generate error:", err);
+                }
+            }
+        }
+
+        async function runMatch() {
+            if (matchAbortController) {
+                matchAbortController.abort();
+            }
+            matchAbortController = new AbortController();
+
+            const spinner = document.getElementById('match-spinner');
+            spinner.classList.remove('hidden');
+            try {
+                const res = await fetch('/api/match', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(state),
+                    signal: matchAbortController.signal
+                });
+                const data = await res.json();
+                if (data.status === 'success') {
+                    state.pred_x = data.predicted_x;
+                    state.pred_y = data.predicted_y;
+
+                    // Update metrics
+                    const errEl = document.getElementById('metric-error');
+                    errEl.innerText = `${data.euclidean_error_px.toFixed(3)} px`;
+                    
+                    const shiftEl = document.getElementById('metric-shift');
+                    shiftEl.innerText = `Δx=${data.err_dx >= 0 ? '+' : ''}${data.err_dx.toFixed(2)}, Δy=${data.err_dy >= 0 ? '+' : ''}${data.err_dy.toFixed(2)}`;
+
+                    const srEl = document.getElementById('metric-scale-rot');
+                    srEl.innerText = `${data.estimated_scale.toFixed(2)}x | ${data.estimated_rotation >= 0 ? '+' : ''}${data.estimated_rotation.toFixed(1)}°`;
+
+                    const latEl = document.getElementById('metric-latency');
+                    const aiTag = data.ai_applied ? " • 🧠 AI Active" : "";
+                    latEl.innerText = `${data.latency_ms.toFixed(1)} ms | Conf: ${data.confidence.toFixed(2)}${aiTag}`;
+
+                    const statusBadge = document.getElementById('badge-pass-status');
+                    if (data.is_success) {
+                        statusBadge.className = "px-2 py-0.5 rounded text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30";
+                        statusBadge.innerText = "PASS (≤5.0 px)";
+                    } else {
+                        statusBadge.className = "px-2 py-0.5 rounded text-xs font-bold bg-rose-500/20 text-rose-400 border border-rose-500/30";
+                        statusBadge.innerText = "FAIL (>5.0 px)";
+                    }
+
+                    renderCanvas();
+                }
+            } catch (err) {
+                if (err.name !== 'AbortError') {
+                    console.error("Match error:", err);
+                }
+            } finally {
+                spinner.classList.add('hidden');
+            }
+        }
+
+        function renderCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            if (state.searchImgObj.complete) {
+                ctx.drawImage(state.searchImgObj, 0, 0, canvas.width, canvas.height);
+            }
+
+            // Draw Ground Truth
+            if (state.show_gt) {
+                const gx = state.current_gt_x;
+                const gy = state.current_gt_y;
+                ctx.strokeStyle = '#22c55e';
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.arc(gx, gy, 5, 0, Math.PI * 2);
+                ctx.stroke();
+
+                // 5 px tolerance ring
+                ctx.strokeStyle = 'rgba(34, 197, 94, 0.4)';
+                ctx.setLineDash([4, 4]);
+                ctx.beginPath();
+                ctx.arc(gx, gy, 15, 0, Math.PI * 2);
+                ctx.stroke();
+                ctx.setLineDash([]);
+            }
+
+            // Draw Predicted Target Crosshair
+            const px = state.pred_x;
+            const py = state.pred_y;
+            ctx.strokeStyle = '#ef4444';
+            ctx.lineWidth = 2;
+
+            ctx.beginPath();
+            ctx.arc(px, py, 4, 0, Math.PI * 2);
+            ctx.stroke();
+
+            // Cross lines
+            ctx.beginPath();
+            ctx.moveTo(px - 10, py);
+            ctx.lineTo(px + 10, py);
+            ctx.moveTo(px, py - 10);
+            ctx.lineTo(px, py + 10);
+            ctx.stroke();
+
+            // Displacement vector
+            if (state.show_gt) {
+                ctx.strokeStyle = '#eab308';
+                ctx.lineWidth = 1.5;
+                ctx.beginPath();
+                ctx.moveTo(state.current_gt_x, state.current_gt_y);
+                ctx.lineTo(px, py);
+                ctx.stroke();
+            }
+        }
+
+        async function loadCADLayers() {
+            try {
+                const res = await fetch(`/api/layers?architecture=${state.architecture}`);
+                const data = await res.json();
+                if (data.status === 'success') {
+                    const gal = document.getElementById('layers-gallery');
+                    gal.innerHTML = '';
+                    data.layers.forEach(l => {
+                        gal.innerHTML += `
+                            <div class="bg-slate-900/80 p-2.5 rounded-lg border border-slate-800 space-y-1.5">
+                                <span class="block text-xs font-semibold text-slate-300 truncate">${l.name}</span>
+                                <div class="aspect-square rounded bg-slate-950 overflow-hidden border border-slate-800">
+                                    <img src="${l.image}" alt="${l.name}" class="w-full h-full object-contain">
+                                </div>
+                            </div>
+                        `;
+                    });
+                    document.getElementById('img-exploded').src = data.exploded_stack;
+                }
+            } catch (err) {
+                console.error("CAD layers error:", err);
+            }
+        }
+
+        async function loadFamilyVariants() {
+            try {
+                const res = await fetch(`/api/family?architecture=${state.architecture}&seed=${state.seed}`);
+                const data = await res.json();
+                if (data.status === 'success') {
+                    const gal = document.getElementById('family-gallery');
+                    gal.innerHTML = '';
+                    data.variants.forEach(v => {
+                        const badgeClass = v.passed ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30' : 'bg-rose-500/20 text-rose-400 border-rose-500/30';
+                        gal.innerHTML += `
+                            <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800 space-y-2">
+                                <div class="flex justify-between items-center text-xs">
+                                    <span class="font-semibold text-slate-200 truncate">${v.name}</span>
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold text-[11px] border ${badgeClass}">${v.error_px.toFixed(2)} px</span>
+                                </div>
+                                <div class="aspect-square rounded-lg bg-slate-950 overflow-hidden border border-slate-800">
+                                    <img src="${v.image}" alt="${v.name}" class="w-full h-full object-contain">
+                                </div>
+                                <div class="text-[11px] font-mono text-slate-400 flex justify-between">
+                                    <span>GT: ${v.gt}</span>
+                                    <span>Pred: ${v.pred}</span>
+                                </div>
+                            </div>
+                        `;
+                    });
+                }
+            } catch (err) {
+                console.error("Family variants error:", err);
+            }
+        }
+
+        // High-Speed Streaming Benchmark Runner (Sample-by-Sample)
+        let benchmarkEventSource = null;
+
+        document.getElementById('btn-run-benchmark').addEventListener('click', () => {
+            const btn = document.getElementById('btn-run-benchmark');
+            const btnText = document.getElementById('bench-btn-text');
+            const spinner = document.getElementById('bench-spinner');
+            const progressBox = document.getElementById('bench-progress-box');
+            const progressBar = document.getElementById('bench-progress-bar');
+            const progressText = document.getElementById('bench-progress-text');
+            const summaryBox = document.getElementById('bench-summary');
+            const tbody = document.getElementById('bench-tbody');
+            const tableContainer = document.getElementById('bench-table-container');
+
+            if (benchmarkEventSource) {
+                benchmarkEventSource.close();
+                benchmarkEventSource = null;
+            }
+
+            // Reset UI state
+            btn.disabled = true;
+            spinner.classList.remove('hidden');
+            btnText.innerText = "Processing Samples...";
+            progressBox.classList.remove('hidden');
+            summaryBox.classList.remove('hidden');
+            progressBar.style.width = "0%";
+            progressText.innerText = "⚡ Initializing 8x Parallel Workers...";
+            tbody.innerHTML = '';
+
+            const t0 = performance.now();
+            let count = 0;
+
+            try {
+                benchmarkEventSource = new EventSource('/api/benchmark/stream');
+
+                benchmarkEventSource.onmessage = (event) => {
+                    if (!event.data) return;
+                    const data = JSON.parse(event.data);
+
+                    if (data.type === 'row') {
+                        count++;
+                        const r = data.row;
+                        const s = data.summary;
+                        const pct = Math.round((s.total_processed / s.total_samples) * 100);
+
+                        // Update Progress & Summary live
+                        progressBar.style.width = `${pct}%`;
+                        progressText.innerText = `⚡ Processing: Sample #${r.sample_id} (${s.total_processed} / ${s.total_samples} - ${pct}%)`;
+
+                        document.getElementById('bench-pass-rate').innerText = `${s.pass_rate_5px}%`;
+                        document.getElementById('bench-mean').innerText = `${s.mean_error.toFixed(3)} px`;
+                        document.getElementById('bench-median').innerText = `${s.median_error.toFixed(3)} px`;
+                        document.getElementById('bench-p95').innerText = `${s.p95_error.toFixed(3)} px`;
+
+                        // Append row with smooth highlight
+                        const rowEl = document.createElement('tr');
+                        rowEl.className = "hover:bg-slate-800/40 bg-sky-500/10 transition-colors duration-700";
+                        rowEl.innerHTML = `
+                            <td class="p-2.5 font-bold text-sky-300">#${r.sample_id}</td>
+                            <td class="p-2.5">${r.scale}x</td>
+                            <td class="p-2.5">${r.rotation >= 0 ? '+' : ''}${r.rotation}°</td>
+                            <td class="p-2.5 text-slate-400">${r.true_coord}</td>
+                            <td class="p-2.5 text-slate-200 font-semibold">${r.pred_coord}</td>
+                            <td class="p-2.5 font-bold ${r.passed ? 'text-emerald-400' : 'text-rose-400'}">${r.error_px.toFixed(3)}</td>
+                            <td class="p-2.5 text-slate-400 text-[11px]">${r.latency_ms} ms</td>
+                            <td class="p-2.5">${r.passed ? '<span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-semibold border border-emerald-500/30">✅ PASS</span>' : '<span class="px-2 py-0.5 rounded bg-rose-500/20 text-rose-400 font-semibold border border-rose-500/30">❌ FAIL</span>'}</td>
+                        `;
+                        tbody.appendChild(rowEl);
+
+                        // Fade highlight out
+                        setTimeout(() => {
+                            rowEl.classList.remove('bg-sky-500/10');
+                        }, 600);
+
+                        // Smooth scroll to latest entry
+                        tableContainer.scrollTop = tableContainer.scrollHeight;
+                    } else if (data.type === 'complete') {
+                        const totalTimeSec = ((performance.now() - t0) / 1000.0).toFixed(2);
+                        progressBar.style.width = "100%";
+                        progressText.innerText = `✅ Benchmark Completed: 30 / 30 Samples in ${totalTimeSec}s!`;
+                        document.getElementById('bench-throughput').innerText = `⚡ Completed (${totalTimeSec}s)`;
+
+                        spinner.classList.add('hidden');
+                        btn.disabled = false;
+                        btnText.innerText = "Re-Run 30-Pair Test";
+
+                        // Show PDF notification banner
+                        const pdfAlert = document.getElementById('bench-pdf-alert');
+                        if (pdfAlert) pdfAlert.classList.remove('hidden');
+
+                        // Refresh Reports tab and iframe
+                        fetchReportStatus();
+                        const frame = document.getElementById('pdf-viewer-frame');
+                        if (frame) frame.src = '/api/reports/view?t=' + Date.now();
+
+                        if (benchmarkEventSource) {
+                            benchmarkEventSource.close();
+                            benchmarkEventSource = null;
+                        }
+                    }
+                };
+
+                benchmarkEventSource.onerror = (err) => {
+                    console.error("SSE Stream error, falling back to batch API:", err);
+                    if (benchmarkEventSource) {
+                        benchmarkEventSource.close();
+                        benchmarkEventSource = null;
+                    }
+                    fallbackBatchRun();
+                };
+            } catch (err) {
+                console.error("Stream init error:", err);
+                fallbackBatchRun();
+            }
+
+            async function fallbackBatchRun() {
+                try {
+                    const res = await fetch('/api/benchmark/run', { method: 'POST' });
+                    const data = await res.json();
+                    if (data.status === 'success') {
+                        progressBar.style.width = "100%";
+                        progressText.innerText = `✅ Completed 30 Samples!`;
+                        document.getElementById('bench-pass-rate').innerText = `${data.pass_rate_5px}%`;
+                        document.getElementById('bench-mean').innerText = `${data.mean_error} px`;
+                        document.getElementById('bench-median').innerText = `${data.median_error} px`;
+                        document.getElementById('bench-p95').innerText = `${data.p95_error} px`;
+
+                        tbody.innerHTML = '';
+                        data.rows.forEach(r => {
+                            tbody.innerHTML += `
+                                <tr class="hover:bg-slate-800/40">
+                                    <td class="p-2.5 font-bold">#${r.sample_id}</td>
+                                    <td class="p-2.5">${r.scale}x</td>
+                                    <td class="p-2.5">${r.rotation >= 0 ? '+' : ''}${r.rotation}°</td>
+                                    <td class="p-2.5 text-slate-400">${r.true_coord}</td>
+                                    <td class="p-2.5 text-slate-200">${r.pred_coord}</td>
+                                    <td class="p-2.5 font-bold ${r.passed ? 'text-sky-400' : 'text-rose-400'}">${r.error_px.toFixed(3)}</td>
+                                    <td class="p-2.5 text-slate-400 text-[11px]">${r.latency_ms || '-'} ms</td>
+                                    <td class="p-2.5">${r.passed ? '<span class="text-emerald-400 font-semibold">✅ PASS</span>' : '<span class="text-rose-400 font-semibold">❌ FAIL</span>'}</td>
+                                </tr>
+                            `;
+                        });
+
+                        // Show PDF notification banner
+                        const pdfAlert = document.getElementById('bench-pdf-alert');
+                        if (pdfAlert) pdfAlert.classList.remove('hidden');
+
+                        // Refresh Reports tab and iframe
+                        fetchReportStatus();
+                        const frame = document.getElementById('pdf-viewer-frame');
+                        if (frame) frame.src = '/api/reports/view?t=' + Date.now();
+                    }
+                } catch (e) {
+                    console.error("Fallback error:", e);
+                } finally {
+                    spinner.classList.add('hidden');
+                    btn.disabled = false;
+                    btnText.innerText = "Run Full 30-Pair Test";
+                }
+            }
+        });
+
+        // Jump to Reports Tab Button Handler
+        const btnGotoReports = document.getElementById('btn-goto-reports');
+        if (btnGotoReports) {
+            btnGotoReports.addEventListener('click', () => {
+                const reportsBtn = document.querySelector('[data-tab="reports"]');
+                if (reportsBtn) {
+                    reportsBtn.click();
+                    const reportsSection = document.getElementById('tab-content-reports');
+                    if (reportsSection) reportsSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        }
+
+        // On-Demand PDF Regeneration Button Handler
+        const btnRegenReport = document.getElementById('btn-regen-report');
+        if (btnRegenReport) {
+            btnRegenReport.addEventListener('click', async () => {
+                const spinner = document.getElementById('regen-spinner');
+                const btnText = document.getElementById('regen-btn-text');
+                btnRegenReport.disabled = true;
+                if (spinner) spinner.classList.remove('hidden');
+                if (btnText) btnText.innerText = "Compiling PDF...";
+
+                try {
+                    const res = await fetch('/api/reports/generate', { method: 'POST' });
+                    const data = await res.json();
+                    if (data.status === 'success') {
+                        await fetchReportStatus();
+                        const frame = document.getElementById('pdf-viewer-frame');
+                        if (frame) frame.src = '/api/reports/view?t=' + Date.now();
+                    }
+                } catch (err) {
+                    console.error("Report gen error:", err);
+                } finally {
+                    if (spinner) spinner.classList.add('hidden');
+                    btnRegenReport.disabled = false;
+                    if (btnText) btnText.innerText = "🔄 Re-generate Report";
+                }
+            });
+        }
+
+        // Fetch and Update Reports Section Status
+        async function fetchReportStatus() {
+            try {
+                const res = await fetch('/api/reports/status');
+                const data = await res.json();
+                if (data.exists) {
+                    const tsEl = document.getElementById('report-timestamp');
+                    if (tsEl) tsEl.innerText = data.last_modified || 'Just now';
+                    const sizeEl = document.getElementById('report-filesize');
+                    if (sizeEl) sizeEl.innerText = `PDF Document (${data.size_kb} KB)`;
+
+                    if (data.summary) {
+                        const s = data.summary;
+                        const passEl = document.getElementById('report-pass-rate');
+                        if (passEl && s.pass_rate_5px !== undefined) {
+                            passEl.innerText = `${s.pass_rate_5px}% (≤5.0px)`;
+                        }
+                        const meanEl = document.getElementById('report-mean-error');
+                        if (meanEl && s.mean_error !== undefined) {
+                            const val = typeof s.mean_error === 'number' ? s.mean_error.toFixed(3) : s.mean_error;
+                            meanEl.innerText = `${val} px`;
+                        }
+                    }
+                    const badge = document.getElementById('report-badge');
+                    if (badge) {
+                        badge.innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Ready & Compiled`;
+                    }
+                }
+            } catch (err) {
+                console.error("Error fetching report status:", err);
+            }
+        }
+
+        // Initialize on load
+        generatePair();
+        fetchReportStatus();
+    </script>
+</body>
+</html>

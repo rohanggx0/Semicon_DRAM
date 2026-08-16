@@ -1,0 +1,43 @@
+{
+  "pair_id": 15,
+  "architecture": "FinFET",
+  "version": "v1.7_post_rotation_corrected",
+  "image_size_px": [
+    1000,
+    1000
+  ],
+  "scale_ratio": 10.088338121895656,
+  "rotation_deg": 1.2845888980519624,
+  "reference": {
+    "filename": "reference_015.png",
+    "fov_relative": 1.0
+  },
+  "search": {
+    "filename": "search_015.png",
+    "fov_relative": 10.088338121895656
+  },
+  "target_center": {
+    "x": 602.3171665423798,
+    "y": 549.5621183753711
+  },
+  "target_bbox": {
+    "xmin": 551.6758740171508,
+    "ymin": 498.87158945119086,
+    "xmax": 652.9975278552431,
+    "ymax": 600.1932432892831
+  },
+  "unrotated_target_center": {
+    "x": 601.1690120943902,
+    "y": 551.8545357326745
+  },
+  "sem_parameters": {
+    "edge_bloom": 0.3,
+    "blur_sigma": 0.3006946039275998,
+    "shot_dose": 123.56286812586575,
+    "gaussian_std": 8.63074942320082,
+    "charging_strength": 20.0,
+    "contrast": 1.0,
+    "gamma": 1.0,
+    "seed": 2041
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "total_samples": 30,
+  "mean_error_px": 146.9065037329939,
+  "median_error_px": 84.94646140930791,
+  "std_error_px": 144.45316571031518,
+  "min_error_px": 0.10655586937047612,
+  "max_error_px": 435.7528493731242,
+  "pass_rate_le_5px": 13.333333333333334,
+  "pass_rate_le_4px": 13.333333333333334,
+  "pass_rate_le_2px": 13.333333333333334,
+  "pass_rate_le_1px": 13.333333333333334,
+  "pass_rate_subpixel_le_0_5px": 13.333333333333334,
+  "avg_runtime_ms": 11165.5173733326
+}

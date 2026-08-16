@@ -1,0 +1,81 @@
+{
+  "total_samples": 30,
+  "pipeline": "ScaleRotationMatcher \u2192 AmbiguityResolver \u2192 SubpixelRefiner",
+  "ai_prefilter_enabled": true,
+  "ai_prefilter_note": "PyTorch SEMRestorationUNet active (models/ai_restoration.py)",
+  "dataset": "30 synthetic DRAM SEM pairs (data/generated/)",
+  "mean_error_px": 19.917110070471253,
+  "median_error_px": 0.0647936198100594,
+  "std_error_px": 106.81938021274492,
+  "min_error_px": 0.023295959098562972,
+  "max_error_px": 595.15701913155,
+  "pass_rate_le_5px": 96.66666666666667,
+  "pass_rate_le_4px": 96.66666666666667,
+  "pass_rate_le_2px": 96.66666666666667,
+  "pass_rate_le_1px": 96.66666666666667,
+  "pass_rate_subpixel_le_0_5px": 96.66666666666667,
+  "avg_match_score": 0.42649602293968203,
+  "avg_runtime_ms": 24887.220846669516,
+  "total_runtime_s": 746.6166254000855,
+  "scale_breakdowns": {
+    "9.0": {
+      "n": 10,
+      "mean_error_px": 0.06314280232347141,
+      "pass_rate_5px": 100.0
+    },
+    "10.0": {
+      "n": 10,
+      "mean_error_px": 0.07569210187798552,
+      "pass_rate_5px": 100.0
+    },
+    "11.0": {
+      "n": 10,
+      "mean_error_px": 59.61249530721229,
+      "pass_rate_5px": 90.0
+    }
+  },
+  "noise_breakdowns": {
+    "high": {
+      "n": 10,
+      "mean_error_px": 59.61249530721229,
+      "pass_rate_5px": 90.0
+    },
+    "low": {
+      "n": 10,
+      "mean_error_px": 0.06314280232347141,
+      "pass_rate_5px": 100.0
+    },
+    "medium": {
+      "n": 10,
+      "mean_error_px": 0.07569210187798552,
+      "pass_rate_5px": 100.0
+    }
+  },
+  "rotation_breakdowns": {
+    "-2.0": {
+      "n": 6,
+      "mean_error_px": 0.08536308248897558,
+      "pass_rate_5px": 100.0
+    },
+    "-1.0": {
+      "n": 6,
+      "mean_error_px": 0.0761470555124595,
+      "pass_rate_5px": 100.0
+    },
+    "0.0": {
+      "n": 6,
+      "mean_error_px": 0.06462668739937177,
+      "pass_rate_5px": 100.0
+    },
+    "1.0": {
+      "n": 6,
+      "mean_error_px": 0.05715958866779467,
+      "pass_rate_5px": 100.0
+    },
+    "2.0": {
+      "n": 6,
+      "mean_error_px": 99.30225393828765,
+      "pass_rate_5px": 83.33333333333334
+    }
+  }
+}
