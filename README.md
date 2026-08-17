@@ -178,7 +178,7 @@ $$(x_{pred}, y_{pred}) = (x_0 + \Delta x, \; y_0 + \Delta y)$$
 ### 4. Periodic Ambiguity Resolution Rule
 For dense periodic capacitor arrays exhibiting symmetric aliasing peaks within confidence margin $\tau = 0.92 \cdot R_{max}$:
 
-$$(x^*, y^*) = \arg\min_{(x_i, y_i) \in \mathcal{C}_{top}} \left\| (x_i, y_i) - (x_{center}, y_{center}) \right\|_2$$
+$$(x^{*}, y^{*}) = \arg\min_{(x_i, y_i) \in \mathcal{C}_{top}} \left\| (x_i, y_i) - (x_{center}, y_{center}) \right\|_2$$
 
 ---
 
