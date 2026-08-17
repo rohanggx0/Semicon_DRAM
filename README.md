@@ -214,14 +214,14 @@ Every time the 30-pair benchmark is executed (via the dashboard or CLI), Drift-S
 ## 📂 Project Architecture & Repository Layout
 
 ```
-Semicon_DRAM/
+TanX/
 ├── run.py                             # 🚀 One-Click Launcher (Backend + Frontend + Auto Browser)
+├── requirements.txt                   # Complete environment dependencies
+├── README.md                          # Full documentation & function reference
 ├── server.py                          # High-Performance Async FastAPI Backend & SSE API
 ├── app.py                             # Alternative Streamlit GUI
 ├── generate_pdf_report.py             # Publication ReportLab 5.0 PDF Generator Engine
 ├── evaluate_dram30_live.py            # Headless 30-Pair Benchmark Evaluator & Logger
-├── requirements.txt                   # Complete environment dependencies
-├── README.md                          # Full documentation & function reference
 │
 ├── static/                            # Frontend Web Application (Vanilla HTML5 / Modern CSS / Canvas)
 │   └── index.html                     # Responsive glassmorphic dashboard (Arena, CAD, Benchmark, Reports)

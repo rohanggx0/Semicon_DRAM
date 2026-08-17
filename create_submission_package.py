@@ -3,7 +3,7 @@ import shutil
 from pathlib import Path
 
 BASE_DIR = Path(r"D:\SemiconFINFETwork")
-SUBMISSION_DIR = BASE_DIR / "submission"
+SUBMISSION_DIR = BASE_DIR / "TanX"
 
 def setup_submission_directory():
     print(f"Setting up clean submission folder at: {SUBMISSION_DIR}")
@@ -21,6 +21,7 @@ def setup_submission_directory():
     (SUBMISSION_DIR / "references").mkdir(parents=True, exist_ok=True)
 
     # 2. Copy core python scripts
+    shutil.copy(BASE_DIR / "run.py", SUBMISSION_DIR / "run.py")
     shutil.copy(BASE_DIR / "generate_dataset.py", SUBMISSION_DIR / "generate_dataset.py")
     shutil.copy(BASE_DIR / "localize.py", SUBMISSION_DIR / "localize.py")
 
@@ -110,9 +111,10 @@ Drift-Sense is a robust, scale-aware, rotation-tolerant localization solution de
 
 ## 1. Submission Folder Structure
 ```
-submission/
-├── README.md                          # Solution documentation & setup instructions
+TanX/
+├── run.py                             # One-click launcher & entry point
 ├── requirements.txt                   # Environment dependencies
+├── README.md                          # Solution documentation & setup instructions
 ├── generate_dataset.py                # Parameterized synthetic SEM image generator
 ├── localize.py                        # Standalone multi-scale localization CLI
 ├── configs/
